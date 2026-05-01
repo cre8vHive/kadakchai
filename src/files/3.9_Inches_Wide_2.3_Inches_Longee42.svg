@@ -1,0 +1,33 @@
+<svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" id="Layer_1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #ab8743;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #ab8743;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g>
+    <line y2="30.9" x2="27.14" y1="51.83" x1="27.21" class="cls-1"></line>
+    <polygon points="35.37 45.18 33.9 43.82 27.21 51.06 20.47 43.86 19.01 45.23 27.22 54 35.37 45.18" class="cls-2"></polygon>
+  </g>
+  <g>
+    <line y2="25.67" x2="27.24" y1="4.17" x1="27.22" class="cls-1"></line>
+    <polygon points="19.05 10.81 20.51 12.17 27.22 4.94 33.94 12.15 35.4 10.79 27.21 2 19.05 10.81" class="cls-2"></polygon>
+  </g>
+  <g>
+    <line y2="27.82" x2="23.09" y1="27.82" x1="4.5" class="cls-1"></line>
+    <polygon points="11.12 36 12.49 34.53 5.27 27.82 12.49 21.11 11.13 19.64 2.33 27.82 11.12 36" class="cls-2"></polygon>
+  </g>
+  <g>
+    <line y2="27.91" x2="31.33" y1="27.82" x1="51.5" class="cls-1"></line>
+    <polygon points="44.84 19.67 43.48 21.14 50.73 27.82 43.54 34.57 44.91 36.03 53.67 27.81 44.84 19.67" class="cls-2"></polygon>
+  </g>
+</svg>

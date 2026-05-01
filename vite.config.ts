@@ -4,9 +4,11 @@ import babel from '@rolldown/plugin-babel'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/kadakchai/',
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  build: {
+    cssMinify: false,
+  }
 })

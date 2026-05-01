@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Lao MN";
+  font-display: swap;
+  src: url("../assets/fonts/lao-mn.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Proxima Nova Rgg";
+  font-display: swap;
+  src: url("../assets/fonts/proxima-nova-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova Rg";
+  font-display: swap;
+  src: url("../assets/fonts/proxima-nova-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Proxima Nova Sb";
+  font-display: swap;
+  src: url("../assets/fonts/proxima-nova-semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Proxima Nova Lt";
+  font-display: swap;
+  src: url("../assets/fonts/proxima-nova-light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "inter";
+  font-display: swap;
+  src: url("../../www.vahdam.in/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2")
+    format("woff2");
+}
+
+h1,
+h3,
+h4,
+span.text-custom,
+p.h2,
+.section-header .h2,
+.section-header .h1,
+.auth-shell h1,
+.cart-page h1,
+.search-page h1 {
+  font-family: "Lao MN", serif !important;
+}
+
+h2,
+h5,
+h6,
+p,
+a,
+input,
+legend,
+label,
+button,
+summary,
+select,
+option,
+small,
+span,
+div {
+  font-family: "Proxima Nova Rg", "inter", sans-serif !important;
+}
+
+strong,
+b,
+.bold {
+  font-family: "Proxima Nova Sb", "Proxima Nova Rg", sans-serif !important;
+}

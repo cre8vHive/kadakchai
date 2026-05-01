@@ -14,14 +14,14 @@ export default function App() {
     <Routes>
       <Route element={<StoreLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="kadakchai/collections/:slug" element={<CollectionPage />} />
-        <Route path="kadakchai/products/:slug" element={<ProductPage />} />
-        <Route path="kadakchai/pages/:slug" element={<ContentPage />} />
-        <Route path="kadakchai/search" element={<SearchPage />} />
-        <Route path="kadakchai/cart" element={<CartPage />} />
-        <Route path="kadakchai/account/login" element={<AccountPage mode="login" />} />
-        <Route path="kadakchai/account/register" element={<AccountPage mode="register" />} />
-        <Route path="kadakchai/account/orders" element={<AccountPage mode="orders" />} />
+        <Route path="/collections/:slug" element={<CollectionPage />} />
+        <Route path="/products/:slug" element={<ProductPage />} />
+        <Route path="/pages/:slug" element={<ContentPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/account/login" element={<AccountPage mode="login" />} />
+        <Route path="/account/register" element={<AccountPage mode="register" />} />
+        <Route path="/account/orders" element={<AccountPage mode="orders" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

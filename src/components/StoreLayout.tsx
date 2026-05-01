@@ -419,16 +419,16 @@ export default function StoreLayout() {
                       <img src={product.image} alt={product.title} />
                       <div className="search-product-info">
                         <span className="search-product-title">{product.title}</span>
-                        <price-list className="price-list">
-                          <sale-price className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
+                        <div className="div">
+                          <div className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
                             <span className="money">{formatMoney(product.price)}</span>
-                          </sale-price>
+                          </div>
                           {product.compareAtPrice ? (
-                            <compare-at-price className="text-subdued line-through">
+                            <div className="text-subdued line-through">
                               <span className="money">{formatMoney(product.compareAtPrice)}</span>
-                            </compare-at-price>
+                            </div>
                           ) : null}
-                        </price-list>
+                        </div>
                       </div>
                     </Link>
                   ))}
@@ -459,11 +459,11 @@ export default function StoreLayout() {
                         <img src={product.image} alt={product.title} />
                         <div className="search-product-info">
                           <span className="search-product-title">{product.title}</span>
-                          <price-list className="price-list">
-                            <sale-price className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
+                          <div className="div">
+                            <div className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
                               <span className="money">{formatMoney(product.price)}</span>
-                            </sale-price>
-                          </price-list>
+                            </div>
+                          </div>
                         </div>
                       </Link>
                     ))}

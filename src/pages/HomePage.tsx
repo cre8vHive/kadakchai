@@ -71,7 +71,7 @@ export default function HomePage() {
           style={{ backgroundColor: "#fbf5ea", color: "#161616" }}
         >
           <div className="section-stack">
-            <section-header className="section-header">
+            <div className="div">
               <div className="prose">
                 <p className="subheading">Something for Everyone</p>
                 <h2 className="h2">
@@ -80,7 +80,7 @@ export default function HomePage() {
                   </span>
                 </h2>
               </div>
-            </section-header>
+            </div>
 
             <div className="collection-list">
               {categoryCollections.map((collection) => (
@@ -94,12 +94,12 @@ export default function HomePage() {
       <section className="shopify-section shopify-section--collection-tabs">
         <div className="section section-blends section-full page-section">
           <div className="section-stack">
-            <section-header className="section-header">
+            <div className="div">
               <div className="prose">
                 <p className="subheading">Best Sellers</p>
                 <h2 className="h2">Shop the Most Loved Picks</h2>
               </div>
-            </section-header>
+            </div>
 
             <div className="product-grid">
               {featuredProducts.map((product) => (
@@ -116,7 +116,7 @@ export default function HomePage() {
           style={{ backgroundColor: "#fbf5ea", color: "#161616" }}
         >
           <div className="section-stack">
-            <section-header className="section-header">
+            <div className="div">
               <div className="prose">
                 <p className="subheading">Loved by Celebrities</p>
                 <h2 className="h2">
@@ -125,7 +125,7 @@ export default function HomePage() {
                   </span>
                 </h2>
               </div>
-            </section-header>
+            </div>
 
             <div className="celebrity-grid">
               {celebrityTestimonials.map((testimonial) => (
@@ -149,12 +149,12 @@ export default function HomePage() {
       <section className="shopify-section shopify-section--ugc">
         <div className="section section-blends section-full page-section">
           <div className="section-stack">
-            <section-header className="section-header">
+            <div className="div">
               <div className="prose">
                 <p className="subheading">Loved by Everyone</p>
                 <h2 className="h2">250,000+ Reviews (4.9/5 Stars)</h2>
               </div>
-            </section-header>
+            </div>
 
             <div className="review-grid">
               {communityReviews.map((review) => (

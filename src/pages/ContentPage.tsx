@@ -59,12 +59,12 @@ export default function ContentPage() {
             style={{ backgroundColor: "#fbf5ea", borderRadius: "24px" }}
           >
             <div className="section-stack page-section">
-              <section-header className="section-header justify-center justify-items-center text-center">
+              <div className="div justify-center justify-items-center text-center">
                 <div className="prose">
                   <p className="subheading">A STORY OF HERITAGE, PASSION & COMMITMENT</p>
                   <h2 className="h2">90 Years of Legacy</h2>
                 </div>
-              </section-header>
+              </div>
 
               <div className="story-timeline">
                 {page.timeline.map((milestone) => (

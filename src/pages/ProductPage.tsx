@@ -33,7 +33,7 @@ export default function ProductPage() {
   function handleVariantChange(variantId: string) {
     const nextSearchParams = new URLSearchParams(searchParams);
 
-    if (variantId === product.variantOptions[0]?.id) {
+    if (variantId === product?.variantOptions[0]?.id) {
       nextSearchParams.delete("variant");
     } else {
       nextSearchParams.set("variant", variantId);
@@ -67,17 +67,17 @@ export default function ProductPage() {
 
             <RatingBadge rating={product.rating} reviewCount={product.reviewCount} />
 
-            <price-list className="price-list">
-              <sale-price className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
+            <div className="div">
+              <div className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
                 <span className="money">{formatMoney(selectedVariant.price)}</span>
-              </sale-price>
+              </div>
 
               {selectedVariant.compareAtPrice ? (
-                <compare-at-price className="text-subdued line-through">
+                <div className="text-subdued line-through">
                   <span className="money">{formatMoney(selectedVariant.compareAtPrice)}</span>
-                </compare-at-price>
+                </div>
               ) : null}
-            </price-list>
+            </div>
 
             <div className="v-stack gap-3">
               <p className="bold">Pick Your Size</p>
@@ -213,12 +213,12 @@ export default function ProductPage() {
         {relatedProducts.length > 0 ? (
           <section className="section section-blends section-full">
             <div className="section-stack">
-              <section-header className="section-header">
+              <div className="div">
                 <div className="prose">
                   <p className="subheading">You may also like</p>
                   <h2 className="h2">Related Products</h2>
                 </div>
-              </section-header>
+              </div>
 
               <div className="product-grid">
                 {relatedProducts.map((relatedProduct) => (

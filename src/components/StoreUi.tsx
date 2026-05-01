@@ -114,19 +114,19 @@ export function ProductCard({ product }: ProductCardProps) {
         </Link>
         <p className="text-subdued">{product.subtitle ?? product.description[0]}</p>
 
-        <price-list className="price-list">
-          <sale-price className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
+        <div className="div">
+          <div className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
             <span className="money">{formatMoney(product.price)}</span>
-          </sale-price>
+          </div>
 
           {product.compareAtPrice ? (
-            <compare-at-price className="text-subdued line-through">
+            <div className="text-subdued line-through">
               <span className="money">{formatMoney(product.compareAtPrice)}</span>
-            </compare-at-price>
+            </div>
           ) : null}
 
           {discountLabel ? <span className="discount-tile">{discountLabel}</span> : null}
-        </price-list>
+        </div>
 
         <div className="product-card__actions">
           <button

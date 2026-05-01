@@ -1,31 +1,31 @@
 @import"https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap";@font-face {
   font-family: "Lao MN";
   font-display: swap;
-  src: url("/assets/lao-mn-CJecVIL8.ttf") format("truetype");
+  src: url("/kadakchai/assets/lao-mn-CJecVIL8.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Proxima Nova Rgg";
   font-display: swap;
-  src: url("/assets/proxima-nova-regular-BkyKiRiS.otf") format("opentype");
+  src: url("/kadakchai/assets/proxima-nova-regular-BkyKiRiS.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Proxima Nova Rg";
   font-display: swap;
-  src: url("/assets/proxima-nova-regular-Bk1KM35c.woff2") format("woff2");
+  src: url("/kadakchai/assets/proxima-nova-regular-Bk1KM35c.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Proxima Nova Sb";
   font-display: swap;
-  src: url("/assets/proxima-nova-semibold-BDKOcPlO.woff2") format("woff2");
+  src: url("/kadakchai/assets/proxima-nova-semibold-BDKOcPlO.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Proxima Nova Lt";
   font-display: swap;
-  src: url("/assets/proxima-nova-light-BL-rKZvx.woff2") format("woff2");
+  src: url("/kadakchai/assets/proxima-nova-light-BL-rKZvx.woff2") format("woff2");
 }
 
 @font-face {

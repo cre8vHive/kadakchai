@@ -1,4 +1,4 @@
-import logo from "../files/Vahdam_logo0ffc.png";
+import logo from "../files/Vahdam_logo0ffc.jpg";
 import storyBanner from "../files/VahdamOct2476copy8ac0.jpg";
 import heroTurmeric from "../files/Turmeric_desktop_fd036d8a-f9ba-4f73-9ef1-392752a3e9571df3.jpg";
 import heroSupplements from "../files/Supplement_desktop_0acc9d56-438c-4ccd-bbe5-24788400c1184cde.jpg";
@@ -49,7 +49,7 @@ import type {
 } from "../types/store";
 
 export const siteSettings = {
-  brandName: "VAHDAM® India",
+  brandName: "Mahalakshmi Tea Powder",
   logo,
   announcementItems: [
     "Free Shipping on purchase above ₹599",

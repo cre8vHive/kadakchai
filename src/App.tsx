@@ -10,7 +10,6 @@ import ProductPage from "./pages/ProductPage";
 import SearchPage from "./pages/SearchPage";
 
 export default function App() {
-  const a = 0;
   return (
     <Routes>
       <Route element={<StoreLayout />}>

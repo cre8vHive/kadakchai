@@ -74,6 +74,7 @@ function CloseIcon() {
 export default function StoreLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const deferredQuery = useDeferredValue(searchQuery);
   const searchResults = deferredQuery.trim() ? searchStore(deferredQuery) : null;
@@ -93,6 +94,7 @@ export default function StoreLayout() {
   useEffect(() => {
     setIsMenuOpen(false);
     setIsSearchOpen(false);
+    setIsNavOpen(false);
   }, [location.pathname, location.search]);
 
   function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
@@ -135,17 +137,16 @@ export default function StoreLayout() {
               <span className="animated-arrow" style={{ transform: "rotate(180deg)" }} />
             </button>
 
-            <nav className="header-menu" aria-label="Primary navigation">
-              {siteSettings.primaryNav.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-            </nav>
+            <button
+              type="button"
+              className={`header-menu-toggle ${isNavOpen ? "is-open" : ""}`}
+              onClick={() => setIsNavOpen((open) => !open)}
+              aria-expanded={isNavOpen}
+              aria-controls="header-menu-panel"
+            >
+              <span></span>
+              <span className={`animated-arrow ${isNavOpen ? "animated-arrow--reverse" : ""}`} />
+            </button>
           </div>
 
           <h1 className="header__logo">
@@ -181,8 +182,38 @@ export default function StoreLayout() {
               </div>
             </button>
           </div>
+
+          <div
+            id="header-menu-panel"
+            className={`header-menu-panel ${isNavOpen ? "is-open" : ""}`}
+          >
+            <nav className="header-menu" aria-label="Primary navigation">
+              {siteSettings.primaryNav.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
+          </div>
         </div>
       </header>
+
+      <section className="category-nav">
+        <div className="category-nav__wrapper">
+          {collections.slice(0, 6).map((collection) => (
+            <Link key={collection.slug} to={`/collections/${collection.slug}`} className="category-card">
+              <div className="category-card__image-wrapper">
+                <img src={collection.heroImage} alt={collection.title} className="category-card__image" />
+              </div>
+              <p className="category-card__label">{collection.title}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <main role="main" id="main" className="anchor">
         <Outlet />

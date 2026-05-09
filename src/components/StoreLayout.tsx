@@ -313,9 +313,6 @@ export default function StoreLayout() {
                         </div>
                       </div>
                     </form>
-                    <p className="inline-note">
-                      Newsletter UI is local and ready for your API wiring later.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -350,8 +347,6 @@ export default function StoreLayout() {
                   <img
                     src={socialLink.icon}
                     alt=""
-                    className="logo-list__image"
-                    style={{ width: "35px", height: "35px" }}
                   />
                 </a>
               ))}

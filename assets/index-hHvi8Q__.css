@@ -15381,14 +15381,16 @@ main.anchor {
 
   @media (max-width: 768px) {
   .footer__block-list {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
 
   .footer__block.footer__block--newsletter {
     grid-column: 1 / -1;
-    width: 100%;
+    min-width: 100%;
     max-width: 100%;
+    margin-left: 0;
   }
 
   .footer__block.footer__block--newsletter .h5 {

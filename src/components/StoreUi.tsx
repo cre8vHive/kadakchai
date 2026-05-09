@@ -131,14 +131,11 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="product-card__actions">
           <button
             type="button"
-            className="button button--lg"
+            className="button button--lg product-card__add-button"
             onClick={() => addItem(product, primaryVariant)}
           >
             Add to Cart
           </button>
-          <Link to={`/products/${product.slug}`} className="button button--lg button--outline">
-            View
-          </Link>
         </div>
       </div>
     </article>

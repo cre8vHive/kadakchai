@@ -350,6 +350,28 @@ button {
   flex-wrap: wrap;
 }
 
+.product-card__add-button,
+.add-to-cart-button {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 15px;
+  background: #004a2b;
+  color: #fff;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.product-card__add-button:hover,
+.add-to-cart-button:hover {
+  background: #00381f;
+}
+
 .discount-tile {
   padding: 3px 8px;
   background: #008e40;
@@ -794,3 +816,6 @@ main.anchor {
     align-items: start;
   }
 }
+
+
+

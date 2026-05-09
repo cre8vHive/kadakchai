@@ -20,13 +20,13 @@ export default function HomePage() {
   useDocumentTitle("Home");
 
   useEffect(() => {
-    const timerId = window.setInterval(() => {
-      setActiveSlide((currentSlide) => (currentSlide + 1) % homeSlides.length);
-    }, 5000);
+    // const timerId = window.setInterval(() => {
+    //   setActiveSlide((currentSlide) => (currentSlide + 1) % homeSlides.length);
+    // }, 5000000);
 
-    return () => {
-      window.clearInterval(timerId);
-    };
+    // return () => {
+    //   window.clearInterval(timerId);
+    // };
   }, []);
 
   const currentSlide = homeSlides[activeSlide];
@@ -37,13 +37,14 @@ export default function HomePage() {
         <div className="home-slideshow">
           <Link to={currentSlide.to} className="home-slide-link">
             <div className="content-over-media content-over-media--auto">
-              <img src={currentSlide.image} alt={currentSlide.title} />
+              <img src={currentSlide.image} alt={currentSlide.title} 
+                className={currentSlide.id === "green-teas" ? "image-adjustment" : ""}
+              />
               <div className="story-band__content" style={{ padding: "7vw", color: "#fff" }}>
                 <div className="prose">
                   {currentSlide.eyebrow ? <p className="subheading">{currentSlide.eyebrow}</p> : null}
                   <h2 className="h1">{currentSlide.title}</h2>
                   {currentSlide.body ? <p>{currentSlide.body}</p> : null}
-                  <span className="button button--xl">Shop Now</span>
                 </div>
               </div>
             </div>

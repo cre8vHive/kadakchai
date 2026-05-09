@@ -1,8 +1,8 @@
 import logo from "../files/Vahdam_logo0ffc.jpg";
 import storyBanner from "../files/VahdamOct2476copy8ac0.jpg";
-import heroTurmeric from "../files/Turmeric_desktop_fd036d8a-f9ba-4f73-9ef1-392752a3e9571df3.jpg";
-import heroSupplements from "../files/Supplement_desktop_0acc9d56-438c-4ccd-bbe5-24788400c1184cde.jpg";
-import heroGreenTeas from "../files/Green_teas_desktop1007.jpg";
+import heroTurmeric from "../files/RoseGoldtea.png";
+import heroSupplements from "../files/Hisbiscus.png";
+import heroGreenTeas from "../files/Bluetea_main.png";
 import collectionAllBanner from "../files/Collection-Page-banner_All-tea_desktop_1ff48.jpg";
 // import categorySupplements from "../files/Supplement_Category_Card0e99.png";
 // import categoryGreenTea from "../files/Green_Teas_Category_Cardff82.png";
@@ -100,25 +100,25 @@ export const homeSlides: HeroSlide[] = [
   {
     id: "turmeric",
     image: heroTurmeric,
-    eyebrow: "Daily wellness",
-    title: "Lakadong Turmeric Curcumin Supplement",
-    body: "Anti-inflammatory support in a clean, premium daily ritual.",
+    eyebrow: "",
+    title: "",
+    body: "",
     to: "/products/turmeric-curcumin-supplement-inflammation",
   },
   {
     id: "supplements",
     image: heroSupplements,
-    eyebrow: "Something for everyone",
-    title: "Shop the bestselling supplement blends",
-    body: "The same visuals and styling, now fully rebuilt as local React UI.",
+    eyebrow: "",
+    title: "",
+    body: "",
     to: "/collections/supplements",
   },
   {
     id: "green-teas",
     image: heroGreenTeas,
-    eyebrow: "Fresh from India",
-    title: "Green teas crafted for calm and balance",
-    body: "Explore the current VAHDAM look with local product and collection routes.",
+    eyebrow: "",
+    title: "",
+    body: "",
     to: "/collections/green-teas",
   },
 ];

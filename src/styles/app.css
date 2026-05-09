@@ -44,15 +44,15 @@ button {
 .header__wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 14px;
   min-height: 78px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: 44px minmax(0, 1fr) max-content;
   grid-template-areas:
     "main-nav logo secondary-nav"
     "menu-panel menu-panel menu-panel";
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .header__main-nav,
@@ -70,7 +70,9 @@ button {
 .header__secondary-nav {
   grid-area: secondary-nav;
   justify-self: end;
-  gap: 4px;
+  flex-wrap: nowrap;
+  gap: 2px;
+  white-space: nowrap;
 }
 
 .header__logo {
@@ -80,7 +82,7 @@ button {
 }
 
 .header__logo-image {
-  width: 125px;
+  width: 100px;
   height: auto;
 }
 
@@ -95,6 +97,11 @@ button {
   display: grid;
   place-items: center;
   position: relative;
+}
+
+.header-icon-button {
+  flex: 0 0 36px;
+  width: 36px;
 }
 
 @media (min-width: 900px) {
@@ -695,8 +702,23 @@ main.anchor {
 }
 
 @media screen and (min-width: 700px) {
+  .header__wrapper {
+    padding: 0 20px;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .header-icon-button {
+    flex-basis: 44px;
+    width: 44px;
+  }
+
+  .header__secondary-nav {
+    gap: 4px;
+  }
+
   .header__logo-image {
-    width: 155px;
+    width: 100px;
   }
 
   .page-section,

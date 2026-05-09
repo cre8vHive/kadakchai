@@ -105,7 +105,6 @@ export default function StoreLayout() {
       navigate(trimmedQuery ? `/search?q=${encodeURIComponent(trimmedQuery)}` : "/search");
     });
   }
-
   return (
     <div className="app-shell">
       <section className="shopify-section shopify-section-group-header-group shopify-section--scrolling-text">
@@ -134,7 +133,14 @@ export default function StoreLayout() {
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
             >
-              <span className="animated-arrow" style={{ transform: "rotate(180deg)" }} />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 7H20M4 12H20M4 17H20"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
             </button>
 
             <button
@@ -144,8 +150,14 @@ export default function StoreLayout() {
               aria-expanded={isNavOpen}
               aria-controls="header-menu-panel"
             >
-              <span></span>
-              <span className={`animated-arrow ${isNavOpen ? "animated-arrow--reverse" : ""}`} />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 7H20M4 12H20M4 17H20"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
             </button>
           </div>
 

@@ -52,9 +52,7 @@ export const siteSettings = {
   brandName: "Mahalakshmi Tea Powder",
   logo,
   announcementItems: [
-    "Free Shipping on purchase above ₹599",
-    "5% Off on purchase above ₹999",
-    "Free Gift worth ₹1199 on purchase above ₹1699",
+    "Limited stock available"
   ],
   primaryNav: [
     { label: "Supplements", to: "/collections/supplements" },

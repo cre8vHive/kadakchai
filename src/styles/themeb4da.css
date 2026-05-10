@@ -6894,6 +6894,7 @@ product-rerender {
   width: var(--header-logo-width);
   opacity: var(--header-logo-opacity, 1);
   height: auto;
+  mix-blend-mode: multiply;
 }
 .header__logo-image--transparent {
   opacity: calc(1 - var(--header-logo-opacity));

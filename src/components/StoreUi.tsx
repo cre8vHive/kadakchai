@@ -48,7 +48,7 @@ export function Breadcrumbs({ links }: BreadcrumbsProps) {
                 </Link>
               )}
 
-              {isLast ? null : <span>/</span>}
+              {isLast ? null : <span className="breadcrumb-separator">›</span>}
             </li>
           );
         })}
@@ -183,9 +183,11 @@ export function QuantityControl({
         onClick={() => onChange(quantity - 1)}
         aria-label={`Decrease ${label}`}
       >
-        -
+        −
       </button>
-      <input aria-label={label} readOnly value={quantity} />
+
+      <span className="quantity-control__value">{quantity}</span>
+
       <button
         type="button"
         onClick={() => onChange(quantity + 1)}

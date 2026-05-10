@@ -72,7 +72,7 @@ export default function HomePage() {
           style={{ backgroundColor: "#fbf5ea", color: "#161616" }}
         >
           <div className="section-stack">
-            <div className="div">
+            <div className="section-heading-center">
               <div className="prose">
                 <p className="subheading">Something for Everyone</p>
                 <h2 className="h2">
@@ -95,7 +95,7 @@ export default function HomePage() {
       <section className="shopify-section shopify-section--collection-tabs">
         <div className="section section-blends section-full page-section">
           <div className="section-stack">
-            <div className="div">
+            <div className="section-heading-center">
               <div className="prose">
                 <p className="subheading">Best Sellers</p>
                 <h2 className="h2">Shop the Most Loved Picks</h2>
@@ -117,7 +117,7 @@ export default function HomePage() {
           style={{ backgroundColor: "#fbf5ea", color: "#161616" }}
         >
           <div className="section-stack">
-            <div className="div">
+            <div className="section-heading-center">
               <div className="prose">
                 <p className="subheading">Loved by Celebrities</p>
                 <h2 className="h2">
@@ -150,7 +150,7 @@ export default function HomePage() {
       <section className="shopify-section shopify-section--ugc">
         <div className="section section-blends section-full page-section">
           <div className="section-stack">
-            <div className="div">
+            <div className="section-heading-center">
               <div className="prose">
                 <p className="subheading">Loved by Everyone</p>
                 <h2 className="h2">250,000+ Reviews (4.9/5 Stars)</h2>

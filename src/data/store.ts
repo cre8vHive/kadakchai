@@ -383,7 +383,7 @@ export const collections: Collection[] = [
     title: "Herbal Infusions",
     eyebrow: "Calm & Balance",
     description: "Relaxing herbal-forward teas that still keep the original site’s premium cream, gold, and green merchandising direction.",
-    heroImage: storyBanner,
+    heroImage: heroTurmeric,
     productSlugs: [
       "ashwagandha-chamomile-mint-green-tea-18-tb",
       "ashwagandha-honey-lemon-green-tea-18-tb",

@@ -560,19 +560,26 @@ export default function StoreLayout() {
                         <p className="bold">{item.product.shortTitle ?? item.product.title}</p>
                         <p className="text-subdued">{item.variant.label}</p>
                       </div>
+                      <div className="cart-line__bottom">
                       <p className="bold">{formatMoney(item.variant.price)}</p>
-                      <QuantityControl
-                        label={item.product.title}
-                        quantity={item.quantity}
-                        onChange={(quantity) => updateQuantity(item.key, quantity)}
-                      />
-                      <button
-                        type="button"
-                        className="button button--outline button--sm"
-                        onClick={() => removeItem(item.key)}
-                      >
-                        Remove
-                      </button>
+
+                      <div className="cart-line__actions">
+                        <QuantityControl
+                          label={item.product.title}
+                          quantity={item.quantity}
+                          onChange={(quantity) => updateQuantity(item.key, quantity)}
+                        />
+
+                        <button
+                          type="button"
+                          className="cart-remove-button"
+                          onClick={() => removeItem(item.key)}
+                          aria-label="Remove item"
+                        >
+                          🗑
+                        </button>
+                      </div>
+                    </div>
                     </div>
                   </article>
                 ))}

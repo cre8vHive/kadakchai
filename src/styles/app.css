@@ -1119,3 +1119,36 @@ main.anchor {
     gap: 14px;
   }
 }
+@media (max-width: 768px) {
+  .home-slide-link img {
+    min-height: auto;
+    height: 520px;
+    object-fit: cover;
+    object-position: center;
+  }
+   .home-slide-link img,
+  .story-band img,
+  .content-over-media img {
+    object-position: 72% center !important;
+  }
+
+  .story-band__content {
+    padding: 32px 24px !important;
+    justify-content: flex-end;
+  }
+
+  .story-band__content .h1 {
+    font-size: 38px;
+    line-height: 1.1;
+  }
+
+  .story-band__content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .home-slideshow {
+    border-radius: 0 0 18px 18px;
+    overflow: hidden;
+  }
+}

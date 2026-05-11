@@ -590,13 +590,13 @@ export default function StoreLayout() {
                   <span>Subtotal</span>
                   <strong>{formatMoney(subtotal)}</strong>
                 </div>
-                <p className="muted-copy">Checkout stays disabled until you wire your own APIs.</p>
+                <p className="muted-copy">Use the cart page to complete Razorpay payment.</p>
                 <Link to="/cart" className="button button--xl button--outline">
                   View Cart
                 </Link>
-                <button type="button" className="button button--xl" disabled>
-                  Checkout Coming Soon
-                </button>
+                <Link to="/cart" className="button button--xl" onClick={closeCart}>
+                  Checkout
+                </Link>
               </div>
             </div>
           )}

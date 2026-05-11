@@ -22,6 +22,7 @@ type CartItem = {
 };
 
 type CartContextValue = {
+  clearCart: () => void;
   closeCart: () => void;
   isOpen: boolean;
   items: CartItem[];
@@ -147,6 +148,11 @@ export function CartProvider({ children }: PropsWithChildren) {
     );
   }
 
+  function clearCart() {
+    setLines([]);
+    setIsOpen(false);
+  }
+
   function openCart() {
     setIsOpen(true);
   }
@@ -163,6 +169,7 @@ export function CartProvider({ children }: PropsWithChildren) {
     <CartContext.Provider
       value={{
         addItem,
+        clearCart,
         closeCart,
         isOpen,
         itemCount,

@@ -1,16 +1,16 @@
 import logo from "../files/Vahdam_logo0ffc.jpg";
-import storyBanner from "../files/VahdamOct2476copy8ac0.jpg";
+import storyBanner from "../files/Hibiscus&Celestail.png";
 import heroTurmeric from "../files/RoseGoldtea.png";
-import heroSupplements from "../files/Hisbiscus.png";
-import heroGreenTeas from "../files/Bluetea_main.png";
-import collectionAllBanner from "../files/Collection-Page-banner_All-tea_desktop_1ff48.jpg";
+import heroSupplements from "../files/Kadak_chai.png";
+import heroGreenTeas from "../files/Rose&Blue.png";
+import collectionAllBanner from "../files/All_collections.png";
 // import categorySupplements from "../files/Supplement_Category_Card0e99.png";
 // import categoryGreenTea from "../files/Green_Teas_Category_Cardff82.png";
 // import categoryHerbal from "../files/Herbal_Tea_Category_Card5c62.png";
 import oprah from "../files/Oprah_be55db67-f1f0-4816-9415-f65101a2db7dc2a3.png";
 import ellen from "../files/Ellenc2a3.png";
 import mariah from "../files/Mariah_Careyc2a3.png";
-import discoveryKit from "../files/Discovery_option_1b8ef.jpg";
+import discoveryKit from "../files/All_collections.png";
 import discoveryGalleryOne from "../files/05_51d7d3f6-dcfd-4824-8396-7802238a963869dd.jpg";
 import discoveryGalleryTwo from "../files/06_512e5941-95f6-434a-9b72-878f49ca5c3069dd.jpg";
 import discoveryGalleryThree from "../files/07_807d2447-b82b-491d-9ef3-1ef0b47819b669dd.jpg";
@@ -18,10 +18,10 @@ import discoveryGalleryFour from "../files/08_93af056c-ef4d-4465-adb4-46c396605b
 import discoveryGalleryFive from "../files/09_a774622b-74a8-4120-9f8e-80cb77adc6d169dd.jpg";
 import discoveryGallerySix from "../files/10_8aecbc69-75c0-4ed3-82b0-cec8663a32d169dd.jpg";
 import discoveryGallerySeven from "../files/11_cc7a8fd2-92d2-4b59-a31c-5a04f8b23b2969dd.jpg";
-import turmericCapsules from "../files/TurmericCapsbef5.png";
+import turmericCapsules from "../files/Bluetea_main.png";
 import turmericIngredients from "../files/Turmeric_Ingredient_1464x585_jpg65e0.jpg";
 import turmericLifestyle from "../files/Turmeric_9e0bfe27-1d59-439c-9103-ab48f82d1688111e.jpg";
-import moringaPowder from "../files/MoringaPack2_18196.jpg";
+import moringaPowder from "../files/RoseGoldtea.png";
 import moringaPowderLifestyle from "../files/Moringa_Powder_1464x585_26f37ee1-1a07-4910-8980-b0ecfdea7c7a6a70.jpg";
 import moringaPowderIngredients from "../files/Moringa_Powder_Ingredient_1464x585_aca8ed4e-7255-4abf-9044-9302e2a94290bc39.jpg";
 import ashwagandhaCapsules from "../files/AshwagandhaCaps791a.png";
@@ -126,9 +126,9 @@ export const homeSlides: HeroSlide[] = [
 export const products: Product[] = [
   {
     slug: "wellness-starter-kit",
-    title: "Wellness Starter Kit - 3 Green Teas + 1 Cup & Saucer",
-    shortTitle: "Wellness Starter Kit",
-    subtitle: "3 Green Teas + 1 Cup & Saucer",
+    title: "Premium Herbal & Tea Collection - 3 Green Teas + 1 Cup & Saucer",
+    shortTitle: "Premium Herbal & Tea Collection",
+    subtitle: "4 Herbal Teas + 2 Premium Teas",
     badge: "Bestseller",
     image: discoveryKit,
     gallery: [
@@ -183,7 +183,7 @@ export const products: Product[] = [
   {
     slug: "turmeric-curcumin-supplement-inflammation",
     title: "Lakadong Turmeric Curcumin Supplement - Anti Inflammatory Support",
-    shortTitle: "Lakadong Turmeric Curcumin",
+    shortTitle: "Blue Pea – Rich Herbal Infusion",
     badge: "18% OFF",
     image: turmericCapsules,
     gallery: [turmericCapsules, turmericIngredients, turmericLifestyle, heroTurmeric],
@@ -192,7 +192,7 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 312,
     description: [
-      "A high-curcumin Lakadong turmeric capsule blend designed for daily inflammation support and joint comfort.",
+      "Experience a visual and sensory masterpiece with our Blue Pea herbal infusion.Sourced from 100% pure Blue Pea flowers, this tea is celebrated for its stunning transformation and delicate profile.",
       "Made for a consistent wellness routine with clean ingredient storytelling and the same visual identity as the original storefront.",
     ],
     benefits: [
@@ -216,14 +216,14 @@ export const products: Product[] = [
   {
     slug: "moringa-powder",
     title: "Moringa Powder 200g - For Improved Immunity",
-    shortTitle: "Moringa Powder 200g",
+    shortTitle: "Rose Gold Tea – Orthodox Long Leaf",
     image: moringaPowder,
     gallery: [moringaPowder, moringaPowderLifestyle, moringaPowderIngredients],
     price: 399,
     rating: 4.8,
     reviewCount: 148,
     description: [
-      "A pantry-friendly moringa powder format for smoothies, warm drinks, or clean morning wellness routines.",
+      "Indulge in the elegance of our Rose Gold Tea, a sophisticated blend that marries high-quality orthodox long-leaf green tea with the romantic essence of roses.",
       "Rebuilt locally so the UI works end-to-end without any mirror-backed HTML at runtime.",
     ],
     benefits: [
@@ -356,7 +356,7 @@ export const products: Product[] = [
 export const collections: Collection[] = [
   {
     slug: "supplements",
-    title: "Supplements",
+    title: "Tea's",
     eyebrow: "Something for Everyone",
     description: "High-curcumin turmeric, Ashwagandha, Moringa, and wellness bundles presented with the same VAHDAM visual language in a fully local React app.",
     heroImage: heroSupplements,

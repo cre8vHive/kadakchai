@@ -24,13 +24,13 @@ import turmericLifestyle from "../files/Turmeric_9e0bfe27-1d59-439c-9103-ab48f82
 import moringaPowder from "../files/RoseGoldtea.png";
 import moringaPowderLifestyle from "../files/Moringa_Powder_1464x585_26f37ee1-1a07-4910-8980-b0ecfdea7c7a6a70.jpg";
 import moringaPowderIngredients from "../files/Moringa_Powder_Ingredient_1464x585_aca8ed4e-7255-4abf-9044-9302e2a94290bc39.jpg";
-import ashwagandhaCapsules from "../files/AshwagandhaCaps791a.png";
+import ashwagandhaCapsules from "../files/Hisbiscus.png";
 import ashwagandhaLifestyle from "../files/Ashwagandha_1464x585_10e114a5-7651-4e8d-a3bc-efb0a4ffaa9f7c64.jpg";
 import ashwagandhaIngredients from "../files/Ashwagandha_Ingredient_1464x585_bba57822-4535-4897-9774-4aa337912be0f4da.jpg";
-import chamomileMint from "../files/Chamomile-mint-citrus05ca.png";
+import chamomileMint from "../files/Celestail.png";
 import greenTeaLifestyle from "../files/Green_teas_f29b8f18-02e3-4f53-901f-bad9fd33bdbe342a.png";
-import honeyLemon from "../files/Honey_Lemon_Pack_28731.jpg";
-import moringaTulsi from "../files/Moringa_Tulsi_Pack_282b0.jpg";
+import honeyLemon from "../files/Kadak_chai.png";
+import moringaTulsi from "../files/Super_dust.png";
 import moringaTulsiLifestyle from "../files/MoringaTulsiGreenTea_38c41579-638e-42a5-a0c9-d6c8210f633d51a5.jpg";
 import teamBanner from "../files/Team-Page-banner_Dd2a5.jpg";
 import impactBanner from "../files/Impact-report-banner64d0.jpg";
@@ -243,7 +243,7 @@ export const products: Product[] = [
   {
     slug: "ashwagandha-capsules-1000mg",
     title: "Ashwagandha Capsules 1000mg - Stress Support",
-    shortTitle: "Ashwagandha Capsules 1000mg",
+    shortTitle: "Hibiscus – Flower Tea",
     badge: "New",
     image: ashwagandhaCapsules,
     gallery: [ashwagandhaCapsules, ashwagandhaLifestyle, ashwagandhaIngredients],
@@ -252,7 +252,7 @@ export const products: Product[] = [
     rating: 4.7,
     reviewCount: 96,
     description: [
-      "A concentrated Ashwagandha capsule format built around calm, recovery, and a grounded daily routine.",
+      "Brighten your day with the bold and tangy notes of our 100% Hibiscus flower tea. This infusion is as striking in flavor as it is in color, offering a refreshing tartness reminiscent of cranberries.",
       "This local TypeScript build keeps the original palette, spacing, and typography while removing the mirror dependency.",
     ],
     benefits: [
@@ -275,14 +275,14 @@ export const products: Product[] = [
   {
     slug: "ashwagandha-chamomile-mint-green-tea-18-tb",
     title: "Ashwagandha Chamomile Mint Green Tea - 18 Tea Bags",
-    shortTitle: "Chamomile Mint Green Tea",
+    shortTitle: "Celestial Chamomile – Rich Herbal Infusion",
     image: chamomileMint,
     gallery: [chamomileMint, greenTeaLifestyle],
     price: 299,
     rating: 4.8,
     reviewCount: 204,
     description: [
-      "A light, calming green tea built around Ashwagandha, mint freshness, and a soft chamomile finish.",
+      "Find your moment of zen with the Celestial Chamomile blend. This calming infusion combines delicate chamomile flowers with refreshing mint and green tea for a well-rounded, soothing experience.",
       "Perfect for the search, collection, and product UI patterns carried across the rebuild.",
     ],
     benefits: [
@@ -302,14 +302,14 @@ export const products: Product[] = [
   {
     slug: "ashwagandha-honey-lemon-green-tea-18-tb",
     title: "Ashwagandha Honey Lemon Green Tea - 18 Tea Bags",
-    shortTitle: "Honey Lemon Green Tea",
+    shortTitle: "Kadak Chai – The Strong Classic",
     image: honeyLemon,
     gallery: [honeyLemon, greenTeaLifestyle],
     price: 299,
     rating: 4.75,
     reviewCount: 188,
     description: [
-      "Zesty honey lemon uplift with Ashwagandha in a daily green tea format that mirrors the original VAHDAM merchandising style.",
+      "Awaken your senses with the robust and invigorating flavor of our Kadak Chai. Specially crafted for those who prefer a bold, strong cup, this blend captures the authentic spirit of traditional Indian tea culture.",
     ],
     benefits: [
       "Bright honey lemon taste",
@@ -328,14 +328,14 @@ export const products: Product[] = [
   {
     slug: "ashwagandha-moringa-tulsi-green-tea-18-tb",
     title: "Ashwagandha Moringa Tulsi Green Tea - 18 Tea Bags",
-    shortTitle: "Moringa Tulsi Green Tea",
+    shortTitle: "Superr Dust – Special Blended Dust Tea",
     image: moringaTulsi,
     gallery: [moringaTulsi, moringaTulsiLifestyle, greenTeaLifestyle],
     price: 299,
     rating: 4.8,
     reviewCount: 214,
     description: [
-      "An earthy, herb-forward green tea pairing Moringa and Tulsi with Ashwagandha for a calm, grounded cup.",
+      "Indulge in a premium tea experience with our Superr Dust. This special blend is meticulously curated to offer quick infusion and maximum strength, making it the perfect choice for a fast-paced lifestyle.",
     ],
     benefits: [
       "Balanced herbal profile",

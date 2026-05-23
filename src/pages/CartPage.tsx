@@ -1,13 +1,50 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { formatMoney } from "../lib/format";
 import { useDocumentTitle } from "../lib/meta";
+import { getRazorpayKeyId, openRazorpayCheckout } from "../lib/razorpay";
 import { QuantityControl } from "../components/StoreUi";
 
 export default function CartPage() {
-  const { items, subtotal, updateQuantity, removeItem } = useCart();
+  const { clearCart, items, subtotal, updateQuantity, removeItem } = useCart();
+  const [checkoutError, setCheckoutError] = useState("");
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [paymentId, setPaymentId] = useState("");
+  const hasRazorpayKey = Boolean(getRazorpayKeyId());
 
   useDocumentTitle("Cart");
+
+  async function handleCheckout() {
+    setCheckoutError("");
+    setPaymentId("");
+    setIsCheckingOut(true);
+
+    try {
+      await openRazorpayCheckout({
+        amount: subtotal,
+        description: `${items.length} item${items.length === 1 ? "" : "s"} from your cart`,
+        items: items.map((item) => ({
+          name: item.product.title,
+          quantity: item.quantity,
+          variant: item.variant.label,
+        })),
+        onDismiss: () => setIsCheckingOut(false),
+        onError: (message) => {
+          setCheckoutError(message);
+          setIsCheckingOut(false);
+        },
+        onSuccess: (razorpayPaymentId) => {
+          setPaymentId(razorpayPaymentId);
+          setIsCheckingOut(false);
+          clearCart();
+        },
+      });
+    } catch (error) {
+      setCheckoutError(error instanceof Error ? error.message : "Payment could not be started.");
+      setIsCheckingOut(false);
+    }
+  }
 
   return (
     <div className="page-section">
@@ -16,8 +53,7 @@ export default function CartPage() {
           <div className="prose" style={{ marginBottom: "24px" }}>
             <h1 className="h2">Cart</h1>
             <p>
-              Fully local cart UI with quantity changes, totals, and persistence. Checkout remains
-              disabled until you wire your own API.
+              Review your cart and pay securely through Razorpay Checkout.
             </p>
           </div>
 
@@ -65,10 +101,29 @@ export default function CartPage() {
             <strong>{formatMoney(subtotal)}</strong>
           </div>
           <p className="muted-copy">
-            Taxes, shipping, and payment remain intentionally static until your APIs are added.
+            This is a client-only Razorpay Checkout. Add a backend later for order creation and
+            signature verification before treating payments as fulfilled.
           </p>
-          <button type="button" className="button button--xl" disabled>
-            Checkout Coming Soon
+          {paymentId ? (
+            <div className="payment-status payment-status--success">
+              Payment started successfully. Razorpay payment ID: {paymentId}
+            </div>
+          ) : null}
+          {checkoutError ? (
+            <div className="payment-status payment-status--error">{checkoutError}</div>
+          ) : null}
+          {!hasRazorpayKey ? (
+            <div className="payment-status payment-status--error">
+              Add VITE_RAZORPAY_KEY_ID to enable checkout.
+            </div>
+          ) : null}
+          <button
+            type="button"
+            className="button button--xl"
+            disabled={items.length === 0 || isCheckingOut || !hasRazorpayKey}
+            onClick={handleCheckout}
+          >
+            {isCheckingOut ? "Opening Razorpay..." : "Pay with Razorpay"}
           </button>
         </aside>
       </div>

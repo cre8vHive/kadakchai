@@ -643,6 +643,23 @@ button {
   gap: 12px;
 }
 
+.payment-status {
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.payment-status--success {
+  background: #e7f7ed;
+  color: #0d4d2b;
+}
+
+.payment-status--error {
+  background: #fff0ed;
+  color: #8a2417;
+}
+
 .field {
   position: relative;
 }

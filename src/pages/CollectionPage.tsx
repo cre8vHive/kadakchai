@@ -1,18 +1,39 @@
 import { useParams } from "react-router-dom";
-import { findCollection, getCollectionProducts } from "../data/store";
+import { findCollection, getCollectionBundle, getCollectionProducts } from "../data/store";
 import { useDocumentTitle } from "../lib/meta";
 import NotFoundPage from "./NotFoundPage";
-import { Breadcrumbs, ProductCard } from "../components/StoreUi";
+import { Breadcrumbs, CollectionBundleCard, ProductCard } from "../components/StoreUi";
+import { useCart } from "../context/CartContext";
 
 export default function CollectionPage() {
   const { slug = "" } = useParams();
   const collection = findCollection(slug);
+  const { addItem } = useCart();
 
   if (!collection) {
     return <NotFoundPage />;
   }
 
   const products = getCollectionProducts(collection.slug);
+  const bundle = getCollectionBundle(collection.slug);
+  const canAddBundle = Boolean(bundle?.products.length && bundle.products.some((product) => product.variantOptions[0]));
+
+  function handleAddBundleToCart() {
+    if (!bundle) {
+      return;
+    }
+
+    bundle.products.forEach((product) => {
+      const primaryVariant = product.variantOptions[0];
+
+      if (!primaryVariant) {
+        return;
+      }
+
+      addItem(product, primaryVariant);
+    });
+  }
+
   useDocumentTitle(collection.title);
 
   return (
@@ -46,6 +67,18 @@ export default function CollectionPage() {
         </div>
 
         <div className="product-grid">
+          {bundle && canAddBundle ? (
+            <CollectionBundleCard
+              title={`Kadakchai Complete ${collection.title} Bundle`}
+              subtitle={`All available products from the ${collection.title} collection, added together in one easy purchase.`}
+              image={bundle.collection.heroImage}
+              productCount={bundle.products.length}
+              totalPrice={bundle.totalPrice}
+              totalCompareAtPrice={bundle.totalCompareAtPrice}
+              onAddBundle={handleAddBundleToCart}
+            />
+          ) : null}
+
           {products.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}

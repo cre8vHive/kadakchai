@@ -4,13 +4,14 @@ import heroTurmeric from "../files/RoseGoldtea.png";
 import heroSupplements from "../files/Kadak_chai.png";
 import heroGreenTeas from "../files/Rose&Blue.png";
 import collectionAllBanner from "../files/All_collections.png";
+import Bestsellers from "../files/KADAK&BLUE.png";
 // import categorySupplements from "../files/Supplement_Category_Card0e99.png";
 // import categoryGreenTea from "../files/Green_Teas_Category_Cardff82.png";
 // import categoryHerbal from "../files/Herbal_Tea_Category_Card5c62.png";
 import oprah from "../files/Oprah_be55db67-f1f0-4816-9415-f65101a2db7dc2a3.png";
 import ellen from "../files/Ellenc2a3.png";
 import mariah from "../files/Mariah_Careyc2a3.png";
-import discoveryKit from "../files/All_collections.png";
+import discoveryKit from "../files/RoseGoldtea.png";
 import discoveryGalleryOne from "../files/05_51d7d3f6-dcfd-4824-8396-7802238a963869dd.jpg";
 import discoveryGalleryTwo from "../files/06_512e5941-95f6-434a-9b72-878f49ca5c3069dd.jpg";
 import discoveryGalleryThree from "../files/07_807d2447-b82b-491d-9ef3-1ef0b47819b669dd.jpg";
@@ -18,19 +19,16 @@ import discoveryGalleryFour from "../files/08_93af056c-ef4d-4465-adb4-46c396605b
 import discoveryGalleryFive from "../files/09_a774622b-74a8-4120-9f8e-80cb77adc6d169dd.jpg";
 import discoveryGallerySix from "../files/10_8aecbc69-75c0-4ed3-82b0-cec8663a32d169dd.jpg";
 import discoveryGallerySeven from "../files/11_cc7a8fd2-92d2-4b59-a31c-5a04f8b23b2969dd.jpg";
-import turmericCapsules from "../files/Bluetea_main.png";
+import turmericCapsules from "../files/Kadak_chai.png";
 import turmericIngredients from "../files/Turmeric_Ingredient_1464x585_jpg65e0.jpg";
 import turmericLifestyle from "../files/Turmeric_9e0bfe27-1d59-439c-9103-ab48f82d1688111e.jpg";
-import moringaPowder from "../files/RoseGoldtea.png";
+import moringaPowder from "../files/Super_dust.png";
 import moringaPowderLifestyle from "../files/Moringa_Powder_1464x585_26f37ee1-1a07-4910-8980-b0ecfdea7c7a6a70.jpg";
 import moringaPowderIngredients from "../files/Moringa_Powder_Ingredient_1464x585_aca8ed4e-7255-4abf-9044-9302e2a94290bc39.jpg";
-import ashwagandhaCapsules from "../files/Hisbiscus.png";
-import ashwagandhaLifestyle from "../files/Ashwagandha_1464x585_10e114a5-7651-4e8d-a3bc-efb0a4ffaa9f7c64.jpg";
-import ashwagandhaIngredients from "../files/Ashwagandha_Ingredient_1464x585_bba57822-4535-4897-9774-4aa337912be0f4da.jpg";
-import chamomileMint from "../files/Celestail.png";
+import chamomileMint from "../files/Bluetea_main.png";
 import greenTeaLifestyle from "../files/Green_teas_f29b8f18-02e3-4f53-901f-bad9fd33bdbe342a.png";
-import honeyLemon from "../files/Kadak_chai.png";
-import moringaTulsi from "../files/Super_dust.png";
+import honeyLemon from "../files/Hisbiscus.png";
+import moringaTulsi from "../files/Celestail.png";
 import moringaTulsiLifestyle from "../files/MoringaTulsiGreenTea_38c41579-638e-42a5-a0c9-d6c8210f633d51a5.jpg";
 import teamBanner from "../files/Team-Page-banner_Dd2a5.jpg";
 import impactBanner from "../files/Impact-report-banner64d0.jpg";
@@ -125,10 +123,10 @@ export const homeSlides: HeroSlide[] = [
 
 export const products: Product[] = [
   {
-    slug: "wellness-starter-kit",
+    slug: "Rose Gold Tea",
     title: "Premium Herbal & Tea Collection - 3 Green Teas + 1 Cup & Saucer",
-    shortTitle: "Premium Herbal & Tea Collection",
-    subtitle: "4 Herbal Teas + 2 Premium Teas",
+    shortTitle: "Rose Gold Tea - Orthodox Long Leaf",
+    subtitle: "Premium Green Tea Blend | Floral Aroma",
     badge: "Bestseller",
     image: discoveryKit,
     gallery: [
@@ -181,9 +179,9 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "turmeric-curcumin-supplement-inflammation",
+    slug: "Kadak Chai",
     title: "Lakadong Turmeric Curcumin Supplement - Anti Inflammatory Support",
-    shortTitle: "Blue Pea – Rich Herbal Infusion",
+    shortTitle: "Kadak Chai – The Strong Classic",
     badge: "18% OFF",
     image: turmericCapsules,
     gallery: [turmericCapsules, turmericIngredients, turmericLifestyle, heroTurmeric],
@@ -192,7 +190,7 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 312,
     description: [
-      "Experience a visual and sensory masterpiece with our Blue Pea herbal infusion.Sourced from 100% pure Blue Pea flowers, this tea is celebrated for its stunning transformation and delicate profile.",
+      "Awaken your senses with the robust and invigorating flavor of our Kadak Chai. Specially crafted for those who prefer a bold, strong cup, this blend captures theauthentic spirit of traditional Indian tea culture.",
       "Made for a consistent wellness routine with clean ingredient storytelling and the same visual identity as the original storefront.",
     ],
     benefits: [
@@ -214,16 +212,16 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "moringa-powder",
+    slug: "Superr Dust",
     title: "Moringa Powder 200g - For Improved Immunity",
-    shortTitle: "Rose Gold Tea – Orthodox Long Leaf",
+    shortTitle: "Superr Dust – Special Blended Dust Tea",
     image: moringaPowder,
     gallery: [moringaPowder, moringaPowderLifestyle, moringaPowderIngredients],
     price: 399,
     rating: 4.8,
     reviewCount: 148,
     description: [
-      "Indulge in the elegance of our Rose Gold Tea, a sophisticated blend that marries high-quality orthodox long-leaf green tea with the romantic essence of roses.",
+      "Indulge in a premium tea experience with our Superr Dust. This special blend is meticulously curated to offer quick infusion and maximum strength, making it the perfect choice for a fast-paced lifestyle.",
       "Rebuilt locally so the UI works end-to-end without any mirror-backed HTML at runtime.",
     ],
     benefits: [
@@ -241,48 +239,16 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "ashwagandha-capsules-1000mg",
-    title: "Ashwagandha Capsules 1000mg - Stress Support",
-    shortTitle: "Hibiscus – Flower Tea",
-    badge: "New",
-    image: ashwagandhaCapsules,
-    gallery: [ashwagandhaCapsules, ashwagandhaLifestyle, ashwagandhaIngredients],
-    price: 649,
-    compareAtPrice: 799,
-    rating: 4.7,
-    reviewCount: 96,
-    description: [
-      "Brighten your day with the bold and tangy notes of our 100% Hibiscus flower tea. This infusion is as striking in flavor as it is in color, offering a refreshing tartness reminiscent of cranberries.",
-      "This local TypeScript build keeps the original palette, spacing, and typography while removing the mirror dependency.",
-    ],
-    benefits: [
-      "Stress and balance support",
-      "Clean daily supplement routine",
-      "Strong product storytelling section support",
-    ],
-    ingredients: ["Ashwagandha Extract", "Plant Capsule"],
-    collectionSlugs: ["supplements", "best-sellers", "all"],
-    searchTerms: ["ashwagandha", "stress", "capsules", "1000mg"],
-    variantOptions: [
-      { id: "ashwa-60", label: "60 Capsules", price: 649, compareAtPrice: 799 },
-      { id: "ashwa-120", label: "120 Capsules", price: 1199, compareAtPrice: 1399 },
-    ],
-    reviews: [
-      { author: "Rahul", rating: 5, body: "Solid product page and clear benefit sections." },
-      { author: "Megha", rating: 4, body: "Love how the color system matches the original site." },
-    ],
-  },
-  {
-    slug: "ashwagandha-chamomile-mint-green-tea-18-tb",
+    slug: "Blue Pea",
     title: "Ashwagandha Chamomile Mint Green Tea - 18 Tea Bags",
-    shortTitle: "Celestial Chamomile – Rich Herbal Infusion",
+    shortTitle: "Blue Pea – Rich Herbal Infusion",
     image: chamomileMint,
     gallery: [chamomileMint, greenTeaLifestyle],
     price: 299,
     rating: 4.8,
     reviewCount: 204,
     description: [
-      "Find your moment of zen with the Celestial Chamomile blend. This calming infusion combines delicate chamomile flowers with refreshing mint and green tea for a well-rounded, soothing experience.",
+      "Experience a visual and sensory masterpiece with our Blue Pea herbal infusion. Sourced from 100% pure Blue Pea flowers, this tea is celebrated for its stunning transformation and delicate profile.",
       "Perfect for the search, collection, and product UI patterns carried across the rebuild.",
     ],
     benefits: [
@@ -300,16 +266,16 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "ashwagandha-honey-lemon-green-tea-18-tb",
+    slug: "Hibiscus",
     title: "Ashwagandha Honey Lemon Green Tea - 18 Tea Bags",
-    shortTitle: "Kadak Chai – The Strong Classic",
+    shortTitle: "Hibiscus – Flower Tea",
     image: honeyLemon,
     gallery: [honeyLemon, greenTeaLifestyle],
     price: 299,
     rating: 4.75,
     reviewCount: 188,
     description: [
-      "Awaken your senses with the robust and invigorating flavor of our Kadak Chai. Specially crafted for those who prefer a bold, strong cup, this blend captures the authentic spirit of traditional Indian tea culture.",
+      "Brighten your day with the bold and tangy notes of our 100% Hibiscus flower tea. This infusion is as striking in flavor as it is in color, offering a refreshing tartness reminiscent of cranberries.",
     ],
     benefits: [
       "Bright honey lemon taste",
@@ -326,16 +292,16 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "ashwagandha-moringa-tulsi-green-tea-18-tb",
+    slug: "Celestail",
     title: "Ashwagandha Moringa Tulsi Green Tea - 18 Tea Bags",
-    shortTitle: "Superr Dust – Special Blended Dust Tea",
+    shortTitle: "Celestial Chamomile – Rich Herbal Infusion",
     image: moringaTulsi,
     gallery: [moringaTulsi, moringaTulsiLifestyle, greenTeaLifestyle],
     price: 299,
     rating: 4.8,
     reviewCount: 214,
     description: [
-      "Indulge in a premium tea experience with our Superr Dust. This special blend is meticulously curated to offer quick infusion and maximum strength, making it the perfect choice for a fast-paced lifestyle.",
+      "Find your moment of zen with the Celestial Chamomile blend. This calming infusion combines delicate chamomile flowers with refreshing mint and green tea for a well-rounded, soothing experience.",
     ],
     benefits: [
       "Balanced herbal profile",
@@ -343,7 +309,7 @@ export const products: Product[] = [
       "Supports search and collection UI parity",
     ],
     ingredients: ["Green Tea", "Ashwagandha", "Moringa", "Tulsi"],
-    collectionSlugs: ["green-teas", "herbal-tea", "all"],
+    collectionSlugs: ["green-teas", "all"],
     searchTerms: ["moringa tulsi", "green tea", "ashwagandha", "tea bags"],
     variantOptions: [{ id: "moringa-tulsi-18", label: "18 Tea Bags", price: 299 }],
     reviews: [
@@ -361,10 +327,8 @@ export const collections: Collection[] = [
     description: "High-curcumin turmeric, Ashwagandha, Moringa, and wellness bundles presented with the same VAHDAM visual language in a fully local React app.",
     heroImage: heroSupplements,
     productSlugs: [
-      "turmeric-curcumin-supplement-inflammation",
-      "moringa-powder",
-      "ashwagandha-capsules-1000mg",
-      "wellness-starter-kit",
+      "Kadak Chai",
+      "Superr Dust",
     ],
   },
   {
@@ -374,10 +338,8 @@ export const collections: Collection[] = [
     description: "Ashwagandha-infused green teas, honey lemon blends, and calm-focused everyday rituals.",
     heroImage: heroGreenTeas,
     productSlugs: [
-      "wellness-starter-kit",
-      "ashwagandha-chamomile-mint-green-tea-18-tb",
-      "ashwagandha-honey-lemon-green-tea-18-tb",
-      "ashwagandha-moringa-tulsi-green-tea-18-tb",
+      "Rose Gold Tea",
+      "Blue Pea",
     ],
   },
   {
@@ -387,9 +349,8 @@ export const collections: Collection[] = [
     description: "Relaxing herbal-forward teas that still keep the original site’s premium cream, gold, and green merchandising direction.",
     heroImage: storyBanner,
     productSlugs: [
-      "ashwagandha-chamomile-mint-green-tea-18-tb",
-      "ashwagandha-honey-lemon-green-tea-18-tb",
-      "ashwagandha-moringa-tulsi-green-tea-18-tb",
+      "Hibiscus",
+      "Celestail",
     ],
   },
   {
@@ -397,12 +358,10 @@ export const collections: Collection[] = [
     title: "Best Sellers",
     eyebrow: "Trusted by Millions",
     description: "The highest-visibility product set across the storefront, surfaced with local data and UI-only cart flows.",
-    heroImage: collectionAllBanner,
+    heroImage: Bestsellers,
     productSlugs: [
-      "wellness-starter-kit",
-      "turmeric-curcumin-supplement-inflammation",
-      "moringa-powder",
-      "ashwagandha-capsules-1000mg",
+      "Kadak Chai",
+      "Blue Pea",
     ],
   },
   {
@@ -567,6 +526,7 @@ export function findProduct(slug: string) {
 }
 
 export function findCollection(slug: string) {
+  console.log("Finding collection with slug:", slug);
   return collections.find((collection) => collection.slug === slug);
 }
 
@@ -643,5 +603,39 @@ export function searchStore(rawQuery: string): SearchResults {
     products: productMatches,
     collections: collectionMatches,
     pages: pageMatches,
+  };
+}
+
+export type CollectionBundle = {
+  collection: Collection;
+  products: Product[];
+  totalPrice: number;
+  totalCompareAtPrice: number;
+};
+
+export function getCollectionBundle(slug: string): CollectionBundle | null {
+  const collection = findCollection(slug);
+
+  if (!collection) {
+    return null;
+  }
+
+  const bundleProducts = getCollectionProducts(slug);
+
+  if (bundleProducts.length === 0) {
+    return null;
+  }
+
+  const totalPrice = bundleProducts.reduce((total, product) => total + product.price, 0);
+  const totalCompareAtPrice = bundleProducts.reduce(
+    (total, product) => total + (product.compareAtPrice ?? product.price),
+    0,
+  );
+
+  return {
+    collection,
+    products: bundleProducts,
+    totalPrice,
+    totalCompareAtPrice,
   };
 }

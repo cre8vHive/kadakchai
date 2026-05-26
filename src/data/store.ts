@@ -7,7 +7,6 @@ import collectionAllBanner from "../files/All_collections.png";
 import Bestsellers from "../files/KADAK&BLUE.png";
 // import categorySupplements from "../files/Supplement_Category_Card0e99.png";
 // import categoryGreenTea from "../files/Green_Teas_Category_Cardff82.png";
-// import categoryHerbal from "../files/Herbal_Tea_Category_Card5c62.png";
 import oprah from "../files/Oprah_be55db67-f1f0-4816-9415-f65101a2db7dc2a3.png";
 import ellen from "../files/Ellenc2a3.png";
 import mariah from "../files/Mariah_Careyc2a3.png";

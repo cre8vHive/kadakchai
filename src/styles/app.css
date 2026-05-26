@@ -323,6 +323,45 @@ button {
   height: 100%;
 }
 
+.bundle-card {
+  background: linear-gradient(180deg, #fffdf2 0%, #f7f1e5 100%);
+  border: 1px solid rgba(171, 135, 68, 0.16);
+  box-shadow: 0 24px 42px rgba(0, 0, 0, 0.08);
+}
+
+.bundle-card__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #50441e;
+  background: #fbf0d2;
+  width: fit-content;
+}
+
+.bundle-card__summary {
+  display: grid;
+  gap: 8px;
+}
+
+.bundle-card__pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bundle-card__savings {
+  margin: 0;
+  color: #6f4f20;
+  font-size: 0.95rem;
+}
+
 .product-card__media {
   display: block;
   background: #fbf5ea;

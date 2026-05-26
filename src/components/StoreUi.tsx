@@ -142,6 +142,65 @@ export function ProductCard({ product }: ProductCardProps) {
   );
 }
 
+type CollectionBundleCardProps = {
+  title: string;
+  subtitle: string;
+  image: string;
+  productCount: number;
+  totalPrice: number;
+  totalCompareAtPrice: number;
+  onAddBundle: () => void;
+};
+
+export function CollectionBundleCard({
+  title,
+  subtitle,
+  image,
+  productCount,
+  totalPrice,
+  totalCompareAtPrice,
+  onAddBundle,
+}: CollectionBundleCardProps) {
+  const savings = totalCompareAtPrice > totalPrice ? totalCompareAtPrice - totalPrice : 0;
+
+  return (
+    <article className="product-card bundle-card">
+      <div className="bundle-card__tag">Featured Bundle</div>
+      <div className="bundle-card__media rounded-sm shadow">
+        <img src={image} alt={title} />
+      </div>
+
+      <div className="bundle-card__info">
+        <span className="badge badge--on-sale">Combo</span>
+        <h2 className="h4">{title}</h2>
+        <p className="text-subdued">{subtitle}</p>
+
+        <div className="div bundle-card__summary">
+          <p>{productCount} items included</p>
+          <div className="bundle-card__pricing">
+            <span className="money">{formatMoney(totalPrice)}</span>
+            {savings > 0 ? (
+              <span className="text-subdued line-through">
+                {formatMoney(totalCompareAtPrice)}
+              </span>
+            ) : null}
+          </div>
+        </div>
+
+        {savings > 0 ? (
+          <p className="bundle-card__savings">Save {formatMoney(savings)} when bought together</p>
+        ) : null}
+
+        <div className="product-card__actions">
+          <button type="button" className="button button--lg product-card__add-button" onClick={onAddBundle}>
+            Add Combo to Cart
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function ProductGallery({ product }: ProductGalleryProps) {
   const [activeImage, setActiveImage] = useState(product.gallery[0] ?? product.image);
 

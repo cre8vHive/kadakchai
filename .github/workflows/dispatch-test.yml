@@ -1,0 +1,11 @@
+name: Dispatch Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm workflow dispatch
+        run: echo "Workflow dispatch is available on main."

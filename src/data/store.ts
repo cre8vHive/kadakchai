@@ -34,6 +34,7 @@ import teamBanner from "../files/Team-Page-banner_Dd2a5.jpg";
 import impactBanner from "../files/Impact-report-banner64d0.jpg";
 import instagramIcon from "../files/insta371e.svg";
 import linkedinIcon from "../files/linkedin013a.svg";
+import facebookIcon from "../files/facebook7d9f.svg";
 import type {
   CelebrityTestimonial,
   Collection,

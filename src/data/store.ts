@@ -1,6 +1,6 @@
 import logo from "../files/Vahdam_logo0ffc.jpg";
 import storyBanner from "../files/Hibiscus&Celestail.png";
-import heroTurmeric from "../files/RoseGoldtea.png";
+import heroTurmeric from "../files/Hibiscus&Celestail.png";
 import heroSupplements from "../files/Kadak_chai.png";
 import heroGreenTeas from "../files/Rose&Blue.png";
 import collectionAllBanner from "../files/All_collections.png";
@@ -10,7 +10,7 @@ import Bestsellers from "../files/KADAK&BLUE.png";
 import oprah from "../files/Oprah_be55db67-f1f0-4816-9415-f65101a2db7dc2a3.png";
 import ellen from "../files/Ellenc2a3.png";
 import mariah from "../files/Mariah_Careyc2a3.png";
-import discoveryKit from "../files/RoseGoldtea.png";
+import discoveryKit from "../files/Rose gold.png";
 import discoveryGalleryOne from "../files/05_51d7d3f6-dcfd-4824-8396-7802238a963869dd.jpg";
 import discoveryGalleryTwo from "../files/06_512e5941-95f6-434a-9b72-878f49ca5c3069dd.jpg";
 import discoveryGalleryThree from "../files/07_807d2447-b82b-491d-9ef3-1ef0b47819b669dd.jpg";
@@ -18,16 +18,16 @@ import discoveryGalleryFour from "../files/08_93af056c-ef4d-4465-adb4-46c396605b
 import discoveryGalleryFive from "../files/09_a774622b-74a8-4120-9f8e-80cb77adc6d169dd.jpg";
 import discoveryGallerySix from "../files/10_8aecbc69-75c0-4ed3-82b0-cec8663a32d169dd.jpg";
 import discoveryGallerySeven from "../files/11_cc7a8fd2-92d2-4b59-a31c-5a04f8b23b2969dd.jpg";
-import turmericCapsules from "../files/Kadak_chai.png";
+import turmericCapsules from "../files/Kadak Chai 1.png";
 import turmericIngredients from "../files/Turmeric_Ingredient_1464x585_jpg65e0.jpg";
 import turmericLifestyle from "../files/Turmeric_9e0bfe27-1d59-439c-9103-ab48f82d1688111e.jpg";
-import moringaPowder from "../files/Super_dust.png";
+import moringaPowder from "../files/Super dust 2.png";
 import moringaPowderLifestyle from "../files/Moringa_Powder_1464x585_26f37ee1-1a07-4910-8980-b0ecfdea7c7a6a70.jpg";
 import moringaPowderIngredients from "../files/Moringa_Powder_Ingredient_1464x585_aca8ed4e-7255-4abf-9044-9302e2a94290bc39.jpg";
-import chamomileMint from "../files/Bluetea_main.png";
+import chamomileMint from "../files/Blue tea.png";
 import greenTeaLifestyle from "../files/Green_teas_f29b8f18-02e3-4f53-901f-bad9fd33bdbe342a.png";
-import honeyLemon from "../files/Hisbiscus.png";
-import moringaTulsi from "../files/Celestail.png";
+import honeyLemon from "../files/Hibiscus.png";
+import moringaTulsi from "../files/celestial.png";
 import moringaTulsiLifestyle from "../files/MoringaTulsiGreenTea_38c41579-638e-42a5-a0c9-d6c8210f633d51a5.jpg";
 import teamBanner from "../files/Team-Page-banner_Dd2a5.jpg";
 import impactBanner from "../files/Impact-report-banner64d0.jpg";
@@ -126,6 +126,7 @@ export const products: Product[] = [
     subtitle: "Premium Green Tea Blend | Floral Aroma",
     badge: "Bestseller",
     image: discoveryKit,
+    dimensions: { width: 400, height: 500 },
     gallery: [
       discoveryKit,
       discoveryGalleryOne,
@@ -181,6 +182,7 @@ export const products: Product[] = [
     shortTitle: "Kadak Chai – The Strong Classic",
     badge: "18% OFF",
     image: turmericCapsules,
+    dimensions: { width: 400, height: 500 },
     gallery: [turmericCapsules, turmericIngredients, turmericLifestyle, heroTurmeric],
     price: 1649,
     compareAtPrice: 1999,
@@ -213,6 +215,7 @@ export const products: Product[] = [
     title: "Moringa Powder 200g - For Improved Immunity",
     shortTitle: "Superr Dust – Special Blended Dust Tea",
     image: moringaPowder,
+    dimensions: { width: 400, height: 500 },
     gallery: [moringaPowder, moringaPowderLifestyle, moringaPowderIngredients],
     price: 399,
     rating: 4.8,
@@ -240,6 +243,7 @@ export const products: Product[] = [
     title: "Ashwagandha Chamomile Mint Green Tea - 18 Tea Bags",
     shortTitle: "Blue Pea – Rich Herbal Infusion",
     image: chamomileMint,
+    dimensions: { width: 400, height: 500 },
     gallery: [chamomileMint, greenTeaLifestyle],
     price: 299,
     rating: 4.8,
@@ -267,6 +271,7 @@ export const products: Product[] = [
     title: "Ashwagandha Honey Lemon Green Tea - 18 Tea Bags",
     shortTitle: "Hibiscus – Flower Tea",
     image: honeyLemon,
+    dimensions: { width: 400, height: 500 },
     gallery: [honeyLemon, greenTeaLifestyle],
     price: 299,
     rating: 4.75,
@@ -293,6 +298,7 @@ export const products: Product[] = [
     title: "Ashwagandha Moringa Tulsi Green Tea - 18 Tea Bags",
     shortTitle: "Celestial Chamomile – Rich Herbal Infusion",
     image: moringaTulsi,
+    dimensions: { width: 400, height: 500 },
     gallery: [moringaTulsi, moringaTulsiLifestyle, greenTeaLifestyle],
     price: 299,
     rating: 4.8,

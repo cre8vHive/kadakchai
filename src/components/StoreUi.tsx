@@ -103,7 +103,7 @@ export function ProductCard({ product }: ProductCardProps) {
         className="product-card__media rounded-sm shadow"
         aria-label={product.title}
       >
-        <img src={product.image} alt={product.title} />
+        <img src={product.image} alt={product.title} className="product-card__image" />
       </Link>
 
       <div className="product-card__info">

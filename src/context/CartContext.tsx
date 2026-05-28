@@ -64,7 +64,7 @@ function getInitialCart() {
 }
 
 export function CartProvider({ children }: PropsWithChildren) {
-  const [lines, setLines] = useState<CartLine[]>(getInitialCart);
+  const [lines, setLines] = useState<CartLine[]>(() => getInitialCart());
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

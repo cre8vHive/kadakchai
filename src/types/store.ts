@@ -35,6 +35,11 @@ export type ProductReview = {
   body: string;
 };
 
+export type ProductDimensions = {
+  width: number; // in pixels
+  height: number; // in pixels
+};
+
 export type Product = {
   slug: string;
   title: string;
@@ -43,6 +48,7 @@ export type Product = {
   badge?: string;
   image: string;
   gallery: string[];
+  dimensions?: ProductDimensions;
   price: number;
   compareAtPrice?: number;
   rating: number;

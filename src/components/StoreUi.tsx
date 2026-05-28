@@ -103,7 +103,7 @@ export function ProductCard({ product }: ProductCardProps) {
         className="product-card__media rounded-sm shadow"
         aria-label={product.title}
       >
-        <img src={product.image} alt={product.title} />
+        <img src={product.image} alt={product.title} className="product-card__image" />
       </Link>
 
       <div className="product-card__info">
@@ -112,9 +112,9 @@ export function ProductCard({ product }: ProductCardProps) {
         <Link to={`/products/${product.slug}`} className="product-card__title h5">
           {product.shortTitle ?? product.title}
         </Link>
-        <p className="product-card__description">{product.subtitle ?? product.description[0]}</p>
+        <p className="text-subdued">{product.subtitle ?? product.description[0]}</p>
 
-        <div className="product-card__pricing">
+        <div className="div">
           <div className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
             <span className="money">{formatMoney(product.price)}</span>
           </div>
@@ -172,8 +172,8 @@ export function CollectionBundleCard({
 
       <div className="bundle-card__info">
         <span className="badge badge--on-sale">Combo</span>
-        <h2 className="product-card__title h4">{title}</h2>
-        <p className="product-card__description">{subtitle}</p>
+        <h2 className="h4">{title}</h2>
+        <p className="text-subdued">{subtitle}</p>
 
         <div className="div bundle-card__summary">
           <p>{productCount} items included</p>

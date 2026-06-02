@@ -7,7 +7,7 @@ import collectionAllBanner from "../files/All_collections.png";
 import Bestsellers from "../files/KADAK&BLUE.png";
 // import categorySupplements from "../files/Supplement_Category_Card0e99.png";
 // import categoryGreenTea from "../files/Green_Teas_Category_Cardff82.png";
-import oprah from "../files/Oprah_be55db67-f1f0-4816-9415-f65101a2db7dc2a3.png";
+import oprah from "../files/Manohar.jpg";
 import ellen from "../files/Ellenc2a3.png";
 import mariah from "../files/Mariah_Careyc2a3.png";
 import discoveryKit from "../files/Rose gold.png";
@@ -88,7 +88,7 @@ export const siteSettings = {
   ],
   topSearches: ["Supplements", "Herbal Tea", "Green Tea", "Gifts", "Matcha"],
   footerDisclaimer:
-    "These Statements Have Not Been Evaluated by the Food and Drug Administration. This Product Is Not Intended to Diagnose, Treat, Cure, or Prevent Any Disease. This Product Is a Dietary Supplement. Not Intended as a Conventional Food, Coffee, or Meal Replacement. This Product Has Been Manufactured in a Third-Party Facility That Is Compliant With Current Good Manufacturing Practices (cGMP) for Dietary Supplement (21 CFR Part 111). Vahdam® Teas Pvt. Ltd. Does Not Directly Manufacture This Product.",
+    "These Statements Have Not Been Evaluated by the Food and Drug Administration. This Product Is Not Intended to Diagnose, Treat, Cure, or Prevent Any Disease. This Product Is a Dietary Supplement. Not Intended as a Conventional Food, Coffee, or Meal Replacement. This Product Has Been Manufactured in a Third-Party Facility That Is Compliant With Current Good Manufacturing Practices (cGMP) for Dietary Supplement (21 CFR Part 111). Mahalakshmi® Teas Pvt. Ltd. Does Not Directly Manufacture This Product.",
 } as const;
 
 export const homeSlides: HeroSlide[] = [
@@ -489,7 +489,7 @@ export const celebrityTestimonials: CelebrityTestimonial[] = [
   {
     image: oprah,
     quote: "I’m in love, I’m in love, I’m in love with a wonderful chai! Shipped directly from India.",
-    author: "Oprah Winfrey",
+    author: "Manohar Thaneeru",
   },
   {
     image: ellen,

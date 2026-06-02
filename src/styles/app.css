@@ -1355,3 +1355,28 @@ main.anchor {
     gap: 14px;
   }
 }
+
+/* Mobile hero/banner safe area: show full image without cropping */
+@media (max-width: 768px) {
+  .content-over-media > :is(picture, img, video, iframe, svg, video-media),
+  .page-hero img,
+  .home-slide-link img,
+  .home-slideshow img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 80vh !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block;
+    margin: 0 auto;
+    place-self: center center !important;
+  }
+
+  /* Allow images to show background space instead of being clipped by parent */
+  .content-over-media,
+  .home-slideshow,
+  .page-hero {
+    overflow: visible !important;
+  }
+}

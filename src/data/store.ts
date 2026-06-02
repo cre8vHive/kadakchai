@@ -7,7 +7,7 @@ import collectionAllBanner from "../files/All_collections.png";
 import Bestsellers from "../files/KADAK&BLUE.png";
 // import categorySupplements from "../files/Supplement_Category_Card0e99.png";
 // import categoryGreenTea from "../files/Green_Teas_Category_Cardff82.png";
-import oprah from "../files/Manohar.jpg";
+import oprah from "../files/Mano.jpg";
 import ellen from "../files/Ellenc2a3.png";
 import mariah from "../files/Mariah_Careyc2a3.png";
 import discoveryKit from "../files/Rose gold.png";
@@ -98,7 +98,7 @@ export const homeSlides: HeroSlide[] = [
     eyebrow: "",
     title: "",
     body: "",
-    to: "/products/turmeric-curcumin-supplement-inflammation",
+    to: "/collections/herbal-tea",
   },
   {
     id: "supplements",
@@ -327,7 +327,7 @@ export const collections: Collection[] = [
     slug: "supplements",
     title: "Tea's",
     eyebrow: "Something for Everyone",
-    description: "High-curcumin turmeric, Ashwagandha, Moringa, and wellness bundles presented with the same VAHDAM visual language in a fully local React app.",
+    description: "",
     heroImage: heroSupplements,
     productSlugs: [
       "Kadak Chai",
@@ -338,7 +338,7 @@ export const collections: Collection[] = [
     slug: "green-teas",
     title: "Green Teas",
     eyebrow: "Fresh From India",
-    description: "Ashwagandha-infused green teas, honey lemon blends, and calm-focused everyday rituals.",
+    description: "",
     heroImage: heroGreenTeas,
     productSlugs: [
       "Rose Gold Tea",
@@ -349,7 +349,7 @@ export const collections: Collection[] = [
     slug: "herbal-tea",
     title: "Herbal Infusions",
     eyebrow: "Calm & Balance",
-    description: "Relaxing herbal-forward teas that still keep the original site’s premium cream, gold, and green merchandising direction.",
+    description: "",
     heroImage: heroTurmeric,
     productSlugs: [
       "Hibiscus",
@@ -360,7 +360,7 @@ export const collections: Collection[] = [
     slug: "best-sellers",
     title: "Best Sellers",
     eyebrow: "Trusted by Millions",
-    description: "The highest-visibility product set across the storefront, surfaced with local data and UI-only cart flows.",
+    description: "",
     heroImage: Bestsellers,
     productSlugs: [
       "Kadak Chai",
@@ -371,7 +371,7 @@ export const collections: Collection[] = [
     slug: "all",
     title: "All Collections",
     eyebrow: "Shop Everything",
-    description: "A single local React collection template covering the major storefront categories without runtime mirror HTML.",
+    description: "",
     heroImage: collectionAllBanner,
     productSlugs: products.map((product) => product.slug),
   },
@@ -528,9 +528,25 @@ export function findProduct(slug: string) {
   return products.find((product) => product.slug === slug);
 }
 
+function normalizeCollectionSlug(slug: string) {
+  return slug
+    .trim()
+    .toLowerCase()
+    .replace(/[’']/g, "-")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-+|-+$)/g, "")
+    .replace(/-+/g, "-");
+}
+
 export function findCollection(slug: string) {
-  console.log("Finding collection with slug:", slug);
-  return collections.find((collection) => collection.slug === slug);
+  const normalizedSlug = normalizeCollectionSlug(slug);
+
+  return collections.find((collection) => {
+    return (
+      normalizeCollectionSlug(collection.slug) === normalizedSlug ||
+      normalizeCollectionSlug(collection.title) === normalizedSlug
+    );
+  });
 }
 
 export function findPage(slug: string) {

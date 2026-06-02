@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import StoreLayout from "./components/StoreLayout";
 import AccountPage from "./pages/AccountPage";
 import CartPage from "./pages/CartPage";
@@ -14,6 +14,7 @@ export default function App() {
     <Routes>
       <Route element={<StoreLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="/collections" element={<Navigate to="/collections/all" replace />} />
         <Route path="/collections/:slug" element={<CollectionPage />} />
         <Route path="/products/:slug" element={<ProductPage />} />
         <Route path="/pages/:slug" element={<ContentPage />} />

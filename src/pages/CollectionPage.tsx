@@ -1,17 +1,16 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { findCollection, getCollectionBundle, getCollectionProducts } from "../data/store";
 import { useDocumentTitle } from "../lib/meta";
-import NotFoundPage from "./NotFoundPage";
 import { Breadcrumbs, CollectionBundleCard, ProductCard } from "../components/StoreUi";
 import { useCart } from "../context/CartContext";
 
 export default function CollectionPage() {
   const { slug = "" } = useParams();
-  const collection = findCollection(slug);
+  const collection = findCollection(slug.toLowerCase());
   const { addItem } = useCart();
 
   if (!collection) {
-    return <NotFoundPage />;
+    return <Navigate to="/collections/all" replace />;
   }
 
   const products = getCollectionProducts(collection.slug);

@@ -320,8 +320,6 @@ export default function StoreLayout() {
               <div className="footer__aside empty:hidden">
                 <div className="footer__aside-bottom copyright">
                   <p className="footer__copyright text-sm text-subdued">
-                    <Link to="/pages/privacy-policy">Privacy Policy</Link>
-                    <span className="link-divider"> | </span>
                     <Link to="/pages/terms-conditions">Terms & Conditions</Link>
                   </p>
                   <p className="footer-custom-p">{siteSettings.footerDisclaimer}</p>
@@ -350,6 +348,18 @@ export default function StoreLayout() {
                   />
                 </a>
               ))}
+            </div>
+
+            <div className="footer-brand-credit">
+              <p className="footer-brand-credit__copyright">
+                © 2025 Mahalakshmi Tea Powders. All Rights Reserved.
+              </p>
+              <p className="footer-brand-credit__description">
+                Crafted with passion for authentic flavors, wellness, and premium tea experiences. Bringing tradition and quality together in every blend.
+              </p>
+              <p className="footer-brand-credit__studio">
+                © Designed & Developed by <span className="footer-brand-credit__studio-highlight">Crev8 Studio</span>
+              </p>
             </div>
           </div>
         </div>

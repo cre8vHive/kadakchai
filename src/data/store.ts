@@ -7,7 +7,7 @@ import collectionAllBanner from "../files/All_collections.png";
 import Bestsellers from "../files/KADAK&BLUE.png";
 // import categorySupplements from "../files/Supplement_Category_Card0e99.png";
 // import categoryGreenTea from "../files/Green_Teas_Category_Cardff82.png";
-import oprah from "../files/Mano.jpg";
+import oprah from "../files/Mano.png";
 import ellen from "../files/Ellenc2a3.png";
 import mariah from "../files/Mariah_Careyc2a3.png";
 import discoveryKit from "../files/Rose gold.png";
@@ -488,7 +488,7 @@ export const contentPages: ContentPage[] = [
 export const celebrityTestimonials: CelebrityTestimonial[] = [
   {
     image: oprah,
-    quote: "I’m in love, I’m in love, I’m in love with a wonderful chai! Shipped directly from India.",
+    quote: "I have been obsessed with Mahalakshmi teas since I discovered them. The quality is unmatched, and the flavors are divine. It’s like a spa day in a cup!",
     author: "Manohar Thaneeru",
   },
   {
@@ -508,13 +508,13 @@ export const communityReviews: CommunityReview[] = [
     image: discoveryKit,
     title: "Finally, a Tea That Works for Me!",
     handle: "Payal N",
-    quote: "Switching to VAHDAM® green tea with Ashwagandha balanced my routine and gave me a calmer afternoon rhythm.",
+    quote: "Switching to Mahalakshmi rose gold tea balanced my routine and gave me a calmer afternoon rhythm.",
   },
   {
     image: turmericCapsules,
-    title: "A supplement page that feels premium",
+    title: "A Chai for My Daily Wellness Ritual",
     handle: "Rohan S",
-    quote: "The turmeric flow is clean, informative, and easy to trust, even before backend integrations are added.",
+    quote: "The Kadak Chai capsules are a game-changer for my joint health. I love the clean ingredient story and the premium feel of the product.",
   },
   {
     image: moringaPowder,

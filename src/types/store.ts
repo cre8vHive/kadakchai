@@ -47,7 +47,6 @@ export type Product = {
   subtitle?: string;
   badge?: string;
   image: string;
-  gallery: string[];
   dimensions?: ProductDimensions;
   price: number;
   compareAtPrice?: number;

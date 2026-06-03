@@ -7,12 +7,11 @@ import NotFoundPage from "./NotFoundPage";
 export default function ContentPage() {
   const { slug = "" } = useParams();
   const page = findPage(slug);
+  useDocumentTitle(page?.title ?? "Page Not Found");
 
   if (!page) {
     return <NotFoundPage />;
   }
-
-  useDocumentTitle(page.title);
 
   return (
     <div className="page-section">

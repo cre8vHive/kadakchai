@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/useCart";
 import { buildDiscountLabel, formatMoney } from "../lib/format";
 import type { Collection, Product, SiteLink } from "../types/store";
 
@@ -18,10 +17,6 @@ type CollectionCardProps = {
 };
 
 type ProductCardProps = {
-  product: Product;
-};
-
-type ProductGalleryProps = {
   product: Product;
 };
 
@@ -98,20 +93,16 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="product-card">
-      <Link
-        to={`/products/${product.slug}`}
-        className="product-card__media rounded-sm shadow"
-        aria-label={product.title}
-      >
+      <div className="product-card__media rounded-sm shadow" aria-label={product.title}>
         <img src={product.image} alt={product.title} className="product-card__image" />
-      </Link>
+      </div>
 
       <div className="product-card__info">
         {product.badge ? <span className="badge badge--on-sale">{product.badge}</span> : null}
         <RatingBadge rating={product.rating} reviewCount={product.reviewCount} />
-        <Link to={`/products/${product.slug}`} className="product-card__title h5">
+        <h2 className="product-card__title h5">
           {product.shortTitle ?? product.title}
-        </Link>
+        </h2>
         <p className="text-subdued">{product.subtitle ?? product.description[0]}</p>
 
         <div className="div">
@@ -198,35 +189,6 @@ export function CollectionBundleCard({
         </div>
       </div>
     </article>
-  );
-}
-
-export function ProductGallery({ product }: ProductGalleryProps) {
-  const [activeImage, setActiveImage] = useState(product.gallery[0] ?? product.image);
-
-  return (
-    <div className="product-gallery">
-      <div className="product-gallery__main">
-        <img src={activeImage} alt={product.title} />
-      </div>
-
-      <div className="product-gallery__thumbs">
-        {product.gallery.map((image) => {
-          const isActive = image === activeImage;
-
-          return (
-            <button
-              key={image}
-              type="button"
-              className={`product-gallery__thumb ${isActive ? "is-active" : ""}`}
-              onClick={() => setActiveImage(image)}
-            >
-              <img src={image} alt="" />
-            </button>
-          );
-        })}
-      </div>
-    </div>
   );
 }
 

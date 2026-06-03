@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/useCart";
 import { formatMoney } from "../lib/format";
 import { useDocumentTitle } from "../lib/meta";
 import { getRazorpayKeyId, openRazorpayCheckout } from "../lib/razorpay";
@@ -101,8 +101,6 @@ export default function CartPage() {
             <strong>{formatMoney(subtotal)}</strong>
           </div>
           <p className="muted-copy">
-            This is a client-only Razorpay Checkout. Add a backend later for order creation and
-            signature verification before treating payments as fulfilled.
           </p>
           {paymentId ? (
             <div className="payment-status payment-status--success">
@@ -123,7 +121,7 @@ export default function CartPage() {
             disabled={items.length === 0 || isCheckingOut || !hasRazorpayKey}
             onClick={handleCheckout}
           >
-            {isCheckingOut ? "Opening Razorpay..." : "Pay with Razorpay"}
+            {isCheckingOut ? "Opening Razorpay..." : "Pay"}
           </button>
         </aside>
       </div>

@@ -2,7 +2,7 @@ import { startTransition, useDeferredValue, useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { collections, searchStore, siteSettings } from "../data/store";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/useCart";
 import { formatMoney } from "../lib/format";
 import { QuantityControl } from "./StoreUi";
 
@@ -17,25 +17,6 @@ function SearchIcon() {
       />
       <path
         d="M46.4745 50.1163L46.4758 50.1178C46.7105 50.3872 47.0261 50.5001 47.3239 50.5001C47.5413 50.5001 47.8217 50.4328 48.0431 50.2252C48.5147 49.8229 48.5324 49.1322 48.1551 48.6866L48.1519 48.6828L36.3565 35.0293C35.952 34.554 35.2539 34.5352 34.8033 34.9048C34.3154 35.3049 34.2929 36.0066 34.6745 36.4574L34.6778 36.4612L46.4745 50.1163Z"
-        fill="#AB8744"
-        stroke="#AB8744"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function AccountIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M39.7305 16.4407C39.7305 22.4406 34.8968 27.3228 28.9154 27.4013C28.8691 27.4155 28.8199 27.4231 28.7689 27.4231C22.7201 27.4231 17.8073 22.5103 17.8073 16.4616C17.8073 10.4128 22.7201 5.5 28.7689 5.5C34.8164 5.5 39.7305 10.3907 39.7305 16.4407ZM37.5426 16.4616C37.5426 11.6119 33.5992 7.68787 28.7689 7.68787C23.9393 7.68787 19.9952 11.632 19.9952 16.4616C19.9952 21.2912 23.9393 25.2353 28.7689 25.2353C33.5992 25.2353 37.5426 21.3113 37.5426 16.4616Z"
-        fill="#AB8744"
-        stroke="#AB8744"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M13.5 40.0891C13.5 32.0415 20.3548 25.5287 28.7364 25.4999H28.7923C37.1838 25.5287 44.0386 32.0415 44.0386 40.0891V49.3873C44.0386 50.0474 43.4809 50.4998 42.8954 50.4998H42.2523C41.9761 50.4998 41.7523 50.276 41.7523 49.9998V40.0673C41.7523 33.2776 35.9584 27.7249 28.7693 27.7249C21.5802 27.7249 15.7863 33.2776 15.7863 40.0673V49.9998C15.7863 50.276 15.5624 50.4998 15.2863 50.4998H14.6431C14.0109 50.4998 13.5 50.0028 13.5 49.3873V40.0891Z"
         fill="#AB8744"
         stroke="#AB8744"
         strokeLinejoin="round"
@@ -92,9 +73,21 @@ export default function StoreLayout() {
   } = useCart();
 
   useEffect(() => {
-    setIsMenuOpen(false);
-    setIsSearchOpen(false);
-    setIsNavOpen(false);
+    let isCurrent = true;
+
+    queueMicrotask(() => {
+      if (!isCurrent) {
+        return;
+      }
+
+      setIsMenuOpen(false);
+      setIsSearchOpen(false);
+      setIsNavOpen(false);
+    });
+
+    return () => {
+      isCurrent = false;
+    };
   }, [location.pathname, location.search]);
 
   function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
@@ -177,10 +170,6 @@ export default function StoreLayout() {
             >
               <SearchIcon />
             </button>
-
-            {/* <Link to="/account/login" className="header-icon-button" aria-label="Open account page">
-              <AccountIcon />
-            </Link> */}
 
             <button
               type="button"
@@ -275,7 +264,7 @@ export default function StoreLayout() {
                   </ul>
                 </div>
 
-                <div className="footer__block footer__block--menu">
+                {/* <div className="footer__block footer__block--menu">
                   <p className="bold">My Account</p>
                   <ul className="v-stack gap-3" role="list">
                     {siteSettings.footerMenus.account.map((link) => (
@@ -286,7 +275,7 @@ export default function StoreLayout() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="footer__block footer__block--newsletter">
                   <div className="v-stack gap-6">
@@ -544,7 +533,7 @@ export default function StoreLayout() {
             <div className="empty-state-card">
               <p className="h5">Your cart is empty</p>
               <p className="muted-copy">
-                The UI is ready. Add products locally now and connect checkout APIs later.
+                Your cart is waiting! Explore our collection and add your favorite teas to experience the perfect brew. 
               </p>
               <Link to="/collections/best-sellers" className="button button--xl">
                 Browse Best Sellers
@@ -552,14 +541,6 @@ export default function StoreLayout() {
             </div>
           ) : (
             <div className="v-stack gap-6">
-              <div className="cart-summary">
-                <p className="bold">Free Shipping on purchase above ₹599</p>
-                <p className="muted-copy">
-                  {subtotal >= 599
-                    ? "Your cart qualifies for the current free shipping banner."
-                    : `Add ${formatMoney(599 - subtotal)} more to unlock free shipping.`}
-                </p>
-              </div>
 
               <div className="cart-lines">
                 {items.map((item) => (

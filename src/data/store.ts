@@ -62,7 +62,7 @@ export const siteSettings = {
     { href: "https://www.facebook.com/vahdamindia", icon: facebookIcon, label: "Facebook" },
     { href: "https://www.linkedin.com/company/vahdam-teas/", icon: linkedinIcon, label: "LinkedIn" },
   ],
-  topSearches: ["Teas", "Herbal Tea", "Green Tea", "Gifts", "Matcha"],
+  topSearches: ["Teas", "Herbal Tea", "Green Tea"],
   footerDisclaimer:
     "These Statements Have Not Been Evaluated by the Food and Drug Administration. This Product Is Not Intended to Diagnose, Treat, Cure, or Prevent Any Disease. This Product Is a Dietary Supplement. Not Intended as a Conventional Food, Coffee, or Meal Replacement. This Product Has Been Manufactured in a Third-Party Facility That Is Compliant With Current Good Manufacturing Practices (cGMP) for Dietary Supplement (21 CFR Part 111). Mahalakshmi® Teas Pvt. Ltd. Does Not Directly Manufacture This Product.",
 } as const;
@@ -97,7 +97,7 @@ export const homeSlides: HeroSlide[] = [
 export const products: Product[] = [
   {
     slug: "Rose Gold Tea",
-    title: "Premium Herbal & Tea Collection - 3 Green Teas + 1 Cup & Saucer",
+    title: "Rose Gold Tea - Orthodox Long Leaf",
     shortTitle: "Rose Gold Tea - Orthodox Long Leaf",
     subtitle: "Premium Green Tea Blend | Floral Aroma",
     badge: "Bestseller",
@@ -144,7 +144,7 @@ export const products: Product[] = [
   },
   {
     slug: "Kadak Chai",
-    title: "Lakadong Turmeric Curcumin Supplement - Anti Inflammatory Support",
+    title: "Kadak Chai - The Strong Classic",
     shortTitle: "Kadak Chai – The Strong Classic",
     badge: "18% OFF",
     image: turmericCapsules,
@@ -177,7 +177,7 @@ export const products: Product[] = [
   },
   {
     slug: "Superr Dust",
-    title: "Moringa Powder 200g - For Improved Immunity",
+    title: "Superr Dust – Special Blended Dust Tea",
     shortTitle: "Superr Dust – Special Blended Dust Tea",
     image: moringaPowder,
     dimensions: { width: 400, height: 500 },
@@ -204,7 +204,7 @@ export const products: Product[] = [
   },
   {
     slug: "Blue Pea",
-    title: "Ashwagandha Chamomile Mint Green Tea - 18 Tea Bags",
+    title: "Blue Pea – Rich Herbal Infusion",
     shortTitle: "Blue Pea – Rich Herbal Infusion",
     image: chamomileMint,
     dimensions: { width: 400, height: 500 },
@@ -231,7 +231,7 @@ export const products: Product[] = [
   },
   {
     slug: "Hibiscus",
-    title: "Ashwagandha Honey Lemon Green Tea - 18 Tea Bags",
+    title: "Hibiscus – Flower Tea",
     shortTitle: "Hibiscus – Flower Tea",
     image: honeyLemon,
     dimensions: { width: 400, height: 500 },
@@ -257,7 +257,7 @@ export const products: Product[] = [
   },
   {
     slug: "Celestail",
-    title: "Ashwagandha Moringa Tulsi Green Tea - 18 Tea Bags",
+    title: "Celestial Chamomile – Rich Herbal Infusion",
     shortTitle: "Celestial Chamomile – Rich Herbal Infusion",
     image: moringaTulsi,
     dimensions: { width: 400, height: 500 },

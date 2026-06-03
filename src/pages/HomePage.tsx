@@ -9,6 +9,7 @@ import {
 } from "../data/store";
 import { useDocumentTitle } from "../lib/meta";
 import { CollectionCard, ProductCard } from "../components/StoreUi";
+import allCollections from "../files/All_collections.png";
 
 export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -175,24 +176,9 @@ export default function HomePage() {
 
       <section className="shopify-section shopify-section--story-band">
         <div className="section section-full page-section">
-          <div className="story-band rounded">
             <div className="content-over-media content-over-media--auto">
-              <img src={currentSlide.image} alt="" />
-              <div className="story-band__content" style={{ padding: "7vw", color: "#fffced" }}>
-                <div className="prose">
-                  <p className="subheading">A Legacy of 90+ Years</p>
-                  <h2 className="h2">The same brand feel, now fully local.</h2>
-                  <p>
-                    The storefront runtime is now native React + TypeScript, while the original
-                    styling direction stays intact through the downloaded theme assets.
-                  </p>
-                  <Link to="/pages/our-story" className="button button--xl">
-                    Explore Our Story
-                  </Link>
-                </div>
-              </div>
+              <img src={allCollections} alt="" className="no-radius" />
             </div>
-          </div>
         </div>
       </section>
     </>

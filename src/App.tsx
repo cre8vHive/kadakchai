@@ -20,9 +20,9 @@ export default function App() {
         <Route path="/pages/:slug" element={<ContentPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/account/login" element={<AccountPage mode="login" />} />
+        {/* <Route path="/account/login" element={<AccountPage mode="login" />} />
         <Route path="/account/register" element={<AccountPage mode="register" />} />
-        <Route path="/account/orders" element={<AccountPage mode="orders" />} />
+        <Route path="/account/orders" element={<AccountPage mode="orders" />} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

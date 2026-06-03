@@ -178,9 +178,9 @@ export default function StoreLayout() {
               <SearchIcon />
             </button>
 
-            <Link to="/account/login" className="header-icon-button" aria-label="Open account page">
+            {/* <Link to="/account/login" className="header-icon-button" aria-label="Open account page">
               <AccountIcon />
-            </Link>
+            </Link> */}
 
             <button
               type="button"

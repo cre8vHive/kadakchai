@@ -62,7 +62,6 @@ export default function CollectionPage() {
 
         <div className="collection-grid-meta">
           <p className="text-subdued">{products.length} products</p>
-          <p className="text-subdued">UI-only collection template with local data</p>
         </div>
 
         <div className="product-grid">

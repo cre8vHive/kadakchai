@@ -2,12 +2,13 @@ import { Navigate, useParams } from "react-router-dom";
 import { findCollection, getCollectionBundle, getCollectionProducts } from "../data/store";
 import { useDocumentTitle } from "../lib/meta";
 import { Breadcrumbs, CollectionBundleCard, ProductCard } from "../components/StoreUi";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/useCart";
 
 export default function CollectionPage() {
   const { slug = "" } = useParams();
   const collection = findCollection(slug.toLowerCase());
   const { addItem } = useCart();
+  useDocumentTitle(collection?.title ?? "Collections");
 
   if (!collection) {
     return <Navigate to="/collections/all" replace />;
@@ -32,8 +33,6 @@ export default function CollectionPage() {
       addItem(product, primaryVariant);
     });
   }
-
-  useDocumentTitle(collection.title);
 
   return (
     <div className="page-section">

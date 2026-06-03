@@ -1,4 +1,3 @@
-import { useDeferredValue, useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ProductCard } from "../components/StoreUi";
@@ -8,20 +7,15 @@ import { useDocumentTitle } from "../lib/meta";
 export default function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentQuery = searchParams.get("q") ?? "";
-  const [query, setQuery] = useState(currentQuery);
-  const deferredQuery = useDeferredValue(query);
-  const results = searchStore(deferredQuery);
+  const results = searchStore(currentQuery);
 
   useDocumentTitle("Search");
 
-  useEffect(() => {
-    setQuery(currentQuery);
-  }, [currentQuery]);
-
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget);
     const nextSearchParams = new URLSearchParams(searchParams);
-    const trimmedQuery = query.trim();
+    const trimmedQuery = String(formData.get("q") ?? "").trim();
 
     if (trimmedQuery) {
       nextSearchParams.set("q", trimmedQuery);
@@ -46,15 +40,15 @@ export default function SearchPage() {
             <div className="v-stack gap-6">
               <div className="search-input">
                 <input
+                  key={currentQuery}
                   type="search"
                   name="q"
-                  value={query}
+                  defaultValue={currentQuery}
                   placeholder="Search for..."
                   autoComplete="off"
                   autoCorrect="off"
                   spellCheck={false}
                   aria-label="Search"
-                  onChange={(event) => setQuery(event.target.value)}
                 />
               </div>
 

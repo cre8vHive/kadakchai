@@ -1,43 +1,9 @@
-import {
-  createContext,
-  type PropsWithChildren,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { type PropsWithChildren, useEffect, useState } from "react";
 import { findProduct } from "../data/store";
 import type { Product, ProductVariant } from "../types/store";
-
-type CartLine = {
-  productSlug: string;
-  quantity: number;
-  variantId: string;
-};
-
-type CartItem = {
-  key: string;
-  product: Product;
-  quantity: number;
-  variant: ProductVariant;
-};
-
-type CartContextValue = {
-  clearCart: () => void;
-  closeCart: () => void;
-  isOpen: boolean;
-  items: CartItem[];
-  itemCount: number;
-  openCart: () => void;
-  removeItem: (key: string) => void;
-  subtotal: number;
-  toggleCart: () => void;
-  updateQuantity: (key: string, quantity: number) => void;
-  addItem: (product: Product, variant: ProductVariant, quantity?: number) => void;
-};
+import { CartContext, type CartLine } from "./cartContextValue";
 
 const CART_STORAGE_KEY = "kadakchai-local-cart";
-
-const CartContext = createContext<CartContextValue | null>(null);
 
 function getInitialCart() {
   if (typeof window === "undefined") {
@@ -186,12 +152,3 @@ export function CartProvider({ children }: PropsWithChildren) {
   );
 }
 
-export function useCart() {
-  const context = useContext(CartContext);
-
-  if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
-  }
-
-  return context;
-}

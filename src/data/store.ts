@@ -1,36 +1,19 @@
 import logo from "../files/Vahdam_logo0ffc.jpg";
-import storyBanner from "../files/Hibiscus&Celestail.png";
+// import storyBanner from "../files/Hibiscus&Celestail.png";
 import heroTurmeric from "../files/Hibiscus&Celestail.png";
 import heroSupplements from "../files/Kadak_chai.png";
 import heroGreenTeas from "../files/Rose&Blue.png";
 import collectionAllBanner from "../files/All_collections.png";
 import Bestsellers from "../files/KADAK&BLUE.png";
-// import categorySupplements from "../files/Supplement_Category_Card0e99.png";
-// import categoryGreenTea from "../files/Green_Teas_Category_Cardff82.png";
 import oprah from "../files/Mano.png";
 import ellen from "../files/Ellenc2a3.png";
 import mariah from "../files/Mariah_Careyc2a3.png";
 import discoveryKit from "../files/Rose gold.png";
-import discoveryGalleryOne from "../files/05_51d7d3f6-dcfd-4824-8396-7802238a963869dd.jpg";
-import discoveryGalleryTwo from "../files/06_512e5941-95f6-434a-9b72-878f49ca5c3069dd.jpg";
-import discoveryGalleryThree from "../files/07_807d2447-b82b-491d-9ef3-1ef0b47819b669dd.jpg";
-import discoveryGalleryFour from "../files/08_93af056c-ef4d-4465-adb4-46c396605b2c69dd.jpg";
-import discoveryGalleryFive from "../files/09_a774622b-74a8-4120-9f8e-80cb77adc6d169dd.jpg";
-import discoveryGallerySix from "../files/10_8aecbc69-75c0-4ed3-82b0-cec8663a32d169dd.jpg";
-import discoveryGallerySeven from "../files/11_cc7a8fd2-92d2-4b59-a31c-5a04f8b23b2969dd.jpg";
 import turmericCapsules from "../files/Kadak Chai 1.png";
-import turmericIngredients from "../files/Turmeric_Ingredient_1464x585_jpg65e0.jpg";
-import turmericLifestyle from "../files/Turmeric_9e0bfe27-1d59-439c-9103-ab48f82d1688111e.jpg";
 import moringaPowder from "../files/Super dust 2.png";
-import moringaPowderLifestyle from "../files/Moringa_Powder_1464x585_26f37ee1-1a07-4910-8980-b0ecfdea7c7a6a70.jpg";
-import moringaPowderIngredients from "../files/Moringa_Powder_Ingredient_1464x585_aca8ed4e-7255-4abf-9044-9302e2a94290bc39.jpg";
 import chamomileMint from "../files/Blue tea.png";
-import greenTeaLifestyle from "../files/Green_teas_f29b8f18-02e3-4f53-901f-bad9fd33bdbe342a.png";
 import honeyLemon from "../files/Hibiscus.png";
 import moringaTulsi from "../files/celestial.png";
-import moringaTulsiLifestyle from "../files/MoringaTulsiGreenTea_38c41579-638e-42a5-a0c9-d6c8210f633d51a5.jpg";
-import teamBanner from "../files/Team-Page-banner_Dd2a5.jpg";
-import impactBanner from "../files/Impact-report-banner64d0.jpg";
 import instagramIcon from "../files/insta371e.svg";
 import facebookIcon from "../files/facebook7d9f.svg";
 import linkedinIcon from "../files/linkedin013a.svg";
@@ -52,7 +35,7 @@ export const siteSettings = {
     "Limited stock available"
   ],
   primaryNav: [
-    { label: "Supplements", to: "/collections/supplements" },
+    { label: "Teas", to: "/collections/supplements" },
     { label: "Green Teas", to: "/collections/green-teas" },
     { label: "Herbal Infusions", to: "/collections/herbal-tea" },
     { label: "Bestsellers", to: "/collections/best-sellers" },
@@ -60,25 +43,18 @@ export const siteSettings = {
   ] satisfies SiteLink[],
   footerMenus: {
     learn: [
-      { label: "Our Story", to: "/pages/our-story" },
-      { label: "Our Team", to: "/pages/team" },
-      { label: "Social Impact", to: "/pages/annual-impact-report" },
+      { label: "Our Story", to: "/pages/our-story" }
     ] satisfies SiteLink[],
     shop: [
-      { label: "Supplements", to: "/collections/supplements" },
+      { label: "Bestsellers", to: "/collections/best-sellers" },
+      { label: "Teas", to: "/collections/supplements" },
       { label: "Herbal Infusions", to: "/collections/herbal-tea" },
-      { label: "Teas", to: "/collections/all" },
-      { label: "Sampler", to: "/products/wellness-starter-kit" },
+      { label: "All Collections", to: "/collections/all" },
     ] satisfies SiteLink[],
     support: [
-      { label: "Shipping", to: "/pages/shipping-delivery" },
       { label: "Contact Us", to: "/pages/contact-us" },
       { label: "Privacy Policy", to: "/pages/privacy-policy" },
       { label: "Terms & Conditions", to: "/pages/terms-conditions" },
-    ] satisfies SiteLink[],
-    account: [
-      { label: "Account", to: "/account/login" },
-      { label: "Orders", to: "/account/orders" },
     ] satisfies SiteLink[],
   },
   socialLinks: [
@@ -86,7 +62,7 @@ export const siteSettings = {
     { href: "https://www.facebook.com/vahdamindia", icon: facebookIcon, label: "Facebook" },
     { href: "https://www.linkedin.com/company/vahdam-teas/", icon: linkedinIcon, label: "LinkedIn" },
   ],
-  topSearches: ["Supplements", "Herbal Tea", "Green Tea", "Gifts", "Matcha"],
+  topSearches: ["Teas", "Herbal Tea", "Green Tea", "Gifts", "Matcha"],
   footerDisclaimer:
     "These Statements Have Not Been Evaluated by the Food and Drug Administration. This Product Is Not Intended to Diagnose, Treat, Cure, or Prevent Any Disease. This Product Is a Dietary Supplement. Not Intended as a Conventional Food, Coffee, or Meal Replacement. This Product Has Been Manufactured in a Third-Party Facility That Is Compliant With Current Good Manufacturing Practices (cGMP) for Dietary Supplement (21 CFR Part 111). Mahalakshmi® Teas Pvt. Ltd. Does Not Directly Manufacture This Product.",
 } as const;
@@ -127,16 +103,6 @@ export const products: Product[] = [
     badge: "Bestseller",
     image: discoveryKit,
     dimensions: { width: 400, height: 500 },
-    gallery: [
-      discoveryKit,
-      discoveryGalleryOne,
-      discoveryGalleryTwo,
-      discoveryGalleryThree,
-      discoveryGalleryFour,
-      discoveryGalleryFive,
-      discoveryGallerySix,
-      discoveryGallerySeven,
-    ],
     price: 899,
     compareAtPrice: 1239,
     rating: 4.69,
@@ -183,7 +149,6 @@ export const products: Product[] = [
     badge: "18% OFF",
     image: turmericCapsules,
     dimensions: { width: 400, height: 500 },
-    gallery: [turmericCapsules, turmericIngredients, turmericLifestyle, heroTurmeric],
     price: 1649,
     compareAtPrice: 1999,
     rating: 4.9,
@@ -216,7 +181,6 @@ export const products: Product[] = [
     shortTitle: "Superr Dust – Special Blended Dust Tea",
     image: moringaPowder,
     dimensions: { width: 400, height: 500 },
-    gallery: [moringaPowder, moringaPowderLifestyle, moringaPowderIngredients],
     price: 399,
     rating: 4.8,
     reviewCount: 148,
@@ -244,7 +208,6 @@ export const products: Product[] = [
     shortTitle: "Blue Pea – Rich Herbal Infusion",
     image: chamomileMint,
     dimensions: { width: 400, height: 500 },
-    gallery: [chamomileMint, greenTeaLifestyle],
     price: 299,
     rating: 4.8,
     reviewCount: 204,
@@ -272,7 +235,6 @@ export const products: Product[] = [
     shortTitle: "Hibiscus – Flower Tea",
     image: honeyLemon,
     dimensions: { width: 400, height: 500 },
-    gallery: [honeyLemon, greenTeaLifestyle],
     price: 299,
     rating: 4.75,
     reviewCount: 188,
@@ -299,7 +261,6 @@ export const products: Product[] = [
     shortTitle: "Celestial Chamomile – Rich Herbal Infusion",
     image: moringaTulsi,
     dimensions: { width: 400, height: 500 },
-    gallery: [moringaTulsi, moringaTulsiLifestyle, greenTeaLifestyle],
     price: 299,
     rating: 4.8,
     reviewCount: 214,
@@ -382,7 +343,7 @@ export const contentPages: ContentPage[] = [
     slug: "our-story",
     title: "Our Story",
     eyebrow: "ABOUT US",
-    heroImage: storyBanner,
+    // heroImage: storyBanner,
     intro:
       "A legacy of over 90 years in the Indian tea industry and a eureka moment is what led to the creation of VAHDAM® India.",
     body: [
@@ -419,38 +380,6 @@ export const contentPages: ContentPage[] = [
         title: "A new scale of impact",
         body: "The brand continues growing its global footprint while staying committed to purposeful, origin-first storytelling.",
       },
-    ],
-  },
-  {
-    slug: "team",
-    title: "Our Team",
-    eyebrow: "Meet The People Behind The Brand",
-    heroImage: teamBanner,
-    intro: "A cross-functional team carrying Indian wellness, tea, and gifting stories to customers around the world.",
-    body: [
-      "The VAHDAM® team blends sourcing expertise, product storytelling, design, and operations into a modern wellness brand that still feels warm and personal.",
-      "This React rebuild keeps that same feeling by localizing the visual system, structure, and merchandising patterns instead of rendering mirrored HTML at runtime.",
-    ],
-  },
-  {
-    slug: "annual-impact-report",
-    title: "Social Impact",
-    eyebrow: "Purpose Beyond The Product",
-    heroImage: impactBanner,
-    intro: "VAHDAM® ties brand growth to education, climate-conscious operations, and long-term community support.",
-    body: [
-      "From TEACH MeTM to farmer-family education support, impact has always been presented as part of the brand’s identity and not as a side note.",
-      "This local UI version preserves that editorial rhythm with the same warm tones, type direction, and section spacing from the downloaded theme.",
-    ],
-  },
-  {
-    slug: "shipping-delivery",
-    title: "Shipping & Delivery",
-    eyebrow: "Support",
-    intro: "Orders over ₹599 qualify for free shipping, with additional offers and gifting thresholds surfaced throughout the storefront UI.",
-    body: [
-      "This rebuilt frontend keeps all the important utility pages local, so you can attach the real logistics and order APIs later without replacing the page templates.",
-      "For now, shipping thresholds, offer banners, and the cart messaging are presented as UI-only interactions.",
     ],
   },
   {

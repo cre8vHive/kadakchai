@@ -448,10 +448,11 @@ export default function StoreLayout() {
                 <p className="search-drawer__heading">TOP PRODUCTS</p>
                 <div className="v-stack gap-0">
                   {searchStore("tea").products.slice(0, 4).map((product) => (
-                    <Link
+                    <div
                       key={product.slug}
-                      to={`/products/${product.slug}`}
                       className="search-product-item"
+                      role="button"
+                      onClick={(e) => e.preventDefault()}
                     >
                       <img src={product.image} alt={product.title} />
                       <div className="search-product-info">
@@ -467,7 +468,7 @@ export default function StoreLayout() {
                           ) : null}
                         </div>
                       </div>
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -488,10 +489,11 @@ export default function StoreLayout() {
 
                   <div className="predictive-search__products-grid">
                     {searchResults.products.slice(0, 6).map((product) => (
-                      <Link
+                      <div
                         key={product.slug}
-                        to={`/products/${product.slug}`}
                         className="search-product-item"
+                        role="button"
+                        onClick={(e) => e.preventDefault()}
                       >
                         <img src={product.image} alt={product.title} />
                         <div className="search-product-info">
@@ -502,7 +504,7 @@ export default function StoreLayout() {
                             </div>
                           </div>
                         </div>
-                      </Link>
+                      </div>
                     ))}
                   </div>
                 </div>

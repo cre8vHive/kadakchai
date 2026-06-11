@@ -98,13 +98,14 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <>
       <article className="product-card">
-      <Link
-        to={`/products/${product.slug}`}
+      <div
         className="product-card__media rounded-sm shadow"
         aria-label={product.title}
+        role="button"
+        onClick={(e) => e.preventDefault()}
       >
         <img src={product.image} alt={product.title} className="product-card__image" />
-      </Link>
+      </div>
 
       <div className="product-card__info">
         {product.badge ? <span className="badge badge--on-sale">{product.badge}</span> : null}

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/useCart";
 import { buildDiscountLabel, formatMoney } from "../lib/format";
 import type { Collection, Product, SiteLink } from "../types/store";
+import { VariantSelectionDialog } from "./VariantSelectionDialog";
 
 type BreadcrumbsProps = {
   links: SiteLink[];
@@ -90,12 +91,20 @@ export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
   const primaryVariant = product.variantOptions[0];
   const discountLabel = buildDiscountLabel(product.price, product.compareAtPrice);
+  const [isVariantDialogOpen, setIsVariantDialogOpen] = useState(false);
+  const [selectedVariantId, setSelectedVariantId] = useState(primaryVariant?.id ?? "");
+  const requiresSelection = Boolean(product.requiresVariantSelection && product.variantOptions.length > 1);
 
   return (
-    <article className="product-card">
-      <div className="product-card__media rounded-sm shadow" aria-label={product.title}>
+    <>
+      <article className="product-card">
+      <Link
+        to={`/products/${product.slug}`}
+        className="product-card__media rounded-sm shadow"
+        aria-label={product.title}
+      >
         <img src={product.image} alt={product.title} className="product-card__image" />
-      </div>
+      </Link>
 
       <div className="product-card__info">
         {product.badge ? <span className="badge badge--on-sale">{product.badge}</span> : null}
@@ -123,13 +132,34 @@ export function ProductCard({ product }: ProductCardProps) {
           <button
             type="button"
             className="button button--lg product-card__add-button"
-            onClick={() => addItem(product, primaryVariant)}
+            onClick={() => {
+              if (requiresSelection) {
+                setSelectedVariantId(primaryVariant?.id ?? "");
+                setIsVariantDialogOpen(true);
+                return;
+              }
+
+              if (primaryVariant) {
+                addItem(product, primaryVariant);
+              }
+            }}
           >
             Add to Cart
           </button>
         </div>
       </div>
-    </article>
+      </article>
+      <VariantSelectionDialog
+        product={product}
+        open={isVariantDialogOpen}
+        defaultVariantId={selectedVariantId}
+        onClose={() => setIsVariantDialogOpen(false)}
+        onConfirm={(variant) => {
+          addItem(product, variant);
+          setIsVariantDialogOpen(false);
+        }}
+      />
+    </>
   );
 }
 
@@ -139,7 +169,6 @@ type CollectionBundleCardProps = {
   image: string;
   productCount: number;
   totalPrice: number;
-  totalCompareAtPrice: number;
   onAddBundle: () => void;
 };
 
@@ -149,11 +178,8 @@ export function CollectionBundleCard({
   image,
   productCount,
   totalPrice,
-  totalCompareAtPrice,
   onAddBundle,
 }: CollectionBundleCardProps) {
-  const savings = totalCompareAtPrice > totalPrice ? totalCompareAtPrice - totalPrice : 0;
-
   return (
     <article className="product-card bundle-card">
       <div className="bundle-card__tag">Featured Bundle</div>
@@ -170,17 +196,8 @@ export function CollectionBundleCard({
           <p>{productCount} items included</p>
           <div className="bundle-card__pricing">
             <span className="money">{formatMoney(totalPrice)}</span>
-            {savings > 0 ? (
-              <span className="text-subdued line-through">
-                {formatMoney(totalCompareAtPrice)}
-              </span>
-            ) : null}
           </div>
         </div>
-
-        {savings > 0 ? (
-          <p className="bundle-card__savings">Save {formatMoney(savings)} when bought together</p>
-        ) : null}
 
         <div className="product-card__actions">
           <button type="button" className="button button--lg product-card__add-button" onClick={onAddBundle}>

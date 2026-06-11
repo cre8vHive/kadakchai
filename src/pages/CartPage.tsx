@@ -27,7 +27,7 @@ export default function CartPage() {
         items: items.map((item) => ({
           name: item.product.title,
           quantity: item.quantity,
-          variant: item.variant.label,
+          variant: item.variant.cartLabel ?? item.variant.label,
         })),
         onDismiss: () => setIsCheckingOut(false),
         onError: (message) => {
@@ -73,7 +73,7 @@ export default function CartPage() {
                   <div className="cart-line__meta">
                     <div>
                       <p className="bold">{item.product.title}</p>
-                      <p className="text-subdued">{item.variant.label}</p>
+                      <p className="text-subdued">{item.variant.cartLabel ?? item.variant.label}</p>
                     </div>
                     <p className="bold">{formatMoney(item.variant.price)}</p>
                     <QuantityControl

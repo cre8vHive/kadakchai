@@ -26,6 +26,7 @@ export type ProductVariant = {
   label: string;
   price: number;
   compareAtPrice?: number;
+  cartLabel?: string;
 };
 
 export type ProductReview = {
@@ -59,6 +60,7 @@ export type Product = {
   collectionSlugs: string[];
   searchTerms: string[];
   variantOptions: ProductVariant[];
+  requiresVariantSelection?: boolean;
   reviews: ProductReview[];
 };
 

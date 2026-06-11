@@ -103,8 +103,7 @@ export const products: Product[] = [
     badge: "Bestseller",
     image: discoveryKit,
     dimensions: { width: 400, height: 500 },
-    price: 899,
-    compareAtPrice: 1239,
+    price: 399,
     rating: 4.69,
     reviewCount: 26,
     description: [
@@ -130,7 +129,8 @@ export const products: Product[] = [
       {
         id: "wsk-pack-3",
         label: "Pack of 3",
-        price: 899,
+        cartLabel: "50 Grams",
+        price: 399,
         compareAtPrice: 1239,
       },
     ],
@@ -149,8 +149,7 @@ export const products: Product[] = [
     badge: "18% OFF",
     image: turmericCapsules,
     dimensions: { width: 400, height: 500 },
-    price: 1649,
-    compareAtPrice: 1999,
+    price: 250,
     rating: 4.9,
     reviewCount: 312,
     description: [
@@ -165,9 +164,10 @@ export const products: Product[] = [
     ingredients: ["Lakadong Turmeric", "Curcumin", "Black Pepper Extract"],
     collectionSlugs: ["supplements", "best-sellers", "all"],
     searchTerms: ["turmeric", "curcumin", "inflammation", "supplement", "capsule"],
+    requiresVariantSelection: true,
     variantOptions: [
-      { id: "turmeric-60", label: "60 Capsules", price: 1649, compareAtPrice: 1999 },
-      { id: "turmeric-120", label: "120 Capsules", price: 2899, compareAtPrice: 3299 },
+      { id: "kadak-500g", label: "500 Grams", price: 250, compareAtPrice: 1999 },
+      { id: "kadak-1kg", label: "1 KG", price: 520, compareAtPrice: 3299 },
     ],
     reviews: [
       { author: "Sonia K.", rating: 5, title: "Daily staple", body: "Easy to add to my routine and the packaging feels very premium." },
@@ -181,7 +181,7 @@ export const products: Product[] = [
     shortTitle: "Superr Dust – Special Blended Dust Tea",
     image: moringaPowder,
     dimensions: { width: 400, height: 500 },
-    price: 399,
+    price: 250,
     rating: 4.8,
     reviewCount: 148,
     description: [
@@ -196,7 +196,11 @@ export const products: Product[] = [
     ingredients: ["Pure Moringa Leaf Powder"],
     collectionSlugs: ["supplements", "best-sellers", "all"],
     searchTerms: ["moringa", "powder", "immunity", "superfood"],
-    variantOptions: [{ id: "moringa-200", label: "200g Pack", price: 399 }],
+    requiresVariantSelection: true,
+    variantOptions: [
+      { id: "superdust-500g", label: "500 Grams", price: 250 },
+     // { id: "superdust-1kg", label: "1 KG", price: 520 },
+    ],
     reviews: [
       { author: "Vidhi", rating: 5, body: "Blends well and fits right into a clean morning routine." },
       { author: "Shiv", rating: 4, body: "Great value and the product page feels very close to the original theme." },
@@ -205,10 +209,10 @@ export const products: Product[] = [
   {
     slug: "Blue Pea",
     title: "Blue Pea – Rich Herbal Infusion",
-    shortTitle: "Blue Pea – Rich Herbal Infusion",
+    shortTitle: "Blue Pea(ButterFly Pea) – Rich Herbal Infusion",
     image: chamomileMint,
     dimensions: { width: 400, height: 500 },
-    price: 299,
+    price: 399,
     rating: 4.8,
     reviewCount: 204,
     description: [
@@ -223,7 +227,7 @@ export const products: Product[] = [
     ingredients: ["Green Tea", "Ashwagandha", "Chamomile", "Mint"],
     collectionSlugs: ["green-teas", "herbal-tea", "all"],
     searchTerms: ["chamomile", "mint", "green tea", "ashwagandha", "tea bags"],
-    variantOptions: [{ id: "chamomile-18", label: "18 Tea Bags", price: 299 }],
+    variantOptions: [{ id: "chamomile-18", label: "18 Tea Bags", cartLabel: "50 Grams", price: 399 }],
     reviews: [
       { author: "Payal", rating: 5, body: "Really soothing and the page layout feels polished." },
       { author: "Nitin", rating: 4, body: "Fresh flavour and great card styling on mobile." },
@@ -235,7 +239,7 @@ export const products: Product[] = [
     shortTitle: "Hibiscus – Flower Tea",
     image: honeyLemon,
     dimensions: { width: 400, height: 500 },
-    price: 299,
+    price: 399,
     rating: 4.75,
     reviewCount: 188,
     description: [
@@ -249,7 +253,7 @@ export const products: Product[] = [
     ingredients: ["Green Tea", "Ashwagandha", "Honey", "Lemon"],
     collectionSlugs: ["green-teas", "herbal-tea", "all"],
     searchTerms: ["honey lemon", "green tea", "tea bags", "ashwagandha"],
-    variantOptions: [{ id: "honey-18", label: "18 Tea Bags", price: 299 }],
+    variantOptions: [{ id: "honey-18", label: "18 Tea Bags", cartLabel: "50 Grams", price: 399 }],
     reviews: [
       { author: "Kiran", rating: 5, body: "Refreshing and visually consistent with the live site." },
       { author: "Arushi", rating: 4, body: "Crisp flavour and the local cart flow works nicely." },
@@ -261,7 +265,7 @@ export const products: Product[] = [
     shortTitle: "Celestial Chamomile – Rich Herbal Infusion",
     image: moringaTulsi,
     dimensions: { width: 400, height: 500 },
-    price: 299,
+    price: 399,
     rating: 4.8,
     reviewCount: 214,
     description: [
@@ -275,7 +279,7 @@ export const products: Product[] = [
     ingredients: ["Green Tea", "Ashwagandha", "Moringa", "Tulsi"],
     collectionSlugs: ["green-teas", "all"],
     searchTerms: ["moringa tulsi", "green tea", "ashwagandha", "tea bags"],
-    variantOptions: [{ id: "moringa-tulsi-18", label: "18 Tea Bags", price: 299 }],
+    variantOptions: [{ id: "moringa-tulsi-18", label: "18 Tea Bags", cartLabel: "50 Grams", price: 399 }],
     reviews: [
       { author: "Sakshi", rating: 5, body: "A favorite for mornings and the new local product route feels seamless." },
       { author: "Dev", rating: 4, body: "Clean ingredient story and great supporting sections." },

@@ -16,6 +16,7 @@ export default function CollectionPage() {
 
   const products = getCollectionProducts(collection.slug);
   const bundle = getCollectionBundle(collection.slug);
+  const bundlePriceOverride = collection.slug === "all" ? 2096 : bundle?.totalPrice;
   const canAddBundle = Boolean(bundle?.products.length && bundle.products.some((product) => product.variantOptions[0]));
 
   function handleAddBundleToCart() {
@@ -70,8 +71,7 @@ export default function CollectionPage() {
               subtitle={`All available products from the ${collection.title} collection, added together in one easy purchase.`}
               image={bundle.collection.heroImage}
               productCount={bundle.products.length}
-              totalPrice={bundle.totalPrice}
-              totalCompareAtPrice={bundle.totalCompareAtPrice}
+              totalPrice={bundlePriceOverride ?? bundle.totalPrice}
               onAddBundle={handleAddBundleToCart}
             />
           ) : null}

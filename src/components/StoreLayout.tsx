@@ -549,11 +549,10 @@ export default function StoreLayout() {
                     <div className="cart-line__meta">
                       <div>
                         <p className="bold">{item.product.shortTitle ?? item.product.title}</p>
-                        <p className="text-subdued">{item.variant.label}</p>
-                      </div>
-                      <div className="cart-line__bottom">
+                      <p className="text-subdued">{item.variant.cartLabel ?? item.variant.label}</p>
+                    </div>
+                    <div className="cart-line__bottom">
                       <p className="bold">{formatMoney(item.variant.price)}</p>
-
                       <div className="cart-line__actions">
                         <QuantityControl
                           label={item.product.title}

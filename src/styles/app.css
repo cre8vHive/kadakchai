@@ -987,6 +987,72 @@ button {
   transform: translateX(0);
 }
 
+.variant-modal-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+}
+
+.variant-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  border: 0;
+}
+
+.variant-modal-panel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(560px, calc(100% - 32px));
+  max-width: 560px;
+  transform: translate(-50%, -50%);
+  background: #fffced;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  padding: 24px;
+}
+
+.variant-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.variant-modal-option {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #d8c7a6;
+  background: #fff;
+  color: inherit;
+  padding: 18px 20px;
+  border-radius: 14px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.variant-modal-option + .variant-modal-option {
+  margin-top: 12px;
+}
+
+.variant-modal-option.is-active {
+  border-color: #ab8744;
+  background: #f7f0de;
+}
+
+.variant-modal-option__label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.variant-modal-actions {
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
 .drawer-head {
   display: flex;
   align-items: center;

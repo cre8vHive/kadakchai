@@ -6542,13 +6542,8 @@ product-rerender {
   gap: var(--footer-block-gap);
   display: grid;
 }
-.footer__block--text,
-.footer__block--newsletter {
+.footer__block--text {
   grid-column: span 2;
-}
-.footer__block--newsletter {
-  gap: var(--spacing-8);
-  display: grid;
 }
 .footer__block--menu {
   max-width: 250px;
@@ -6579,9 +6574,6 @@ product-rerender {
   .footer__block--text {
     flex-basis: 25%;
   }
-  .footer__block--newsletter {
-    flex-basis: 100%;
-  }
   .footer__block--menu {
     flex-shrink: 0;
   }
@@ -6600,15 +6592,7 @@ product-rerender {
   .footer__block-list {
     flex-wrap: nowrap;
   }
-  .footer__block--newsletter {
-    flex-basis: 33.3333%;
-  }
-  .footer__block--newsletter:only-child {
-    flex-basis: 50%;
-  }
-  .footer__newsletter-form {
-    max-width: 400px;
-  }
+
 }
 @media screen and (min-width: 1150px) {
   .footer {
@@ -11127,9 +11111,3 @@ shopify-accelerated-checkout-cart {
   overflow: hidden;
 }
 /*# sourceMappingURL=/cdn/shop/t/404/assets/theme.css.map?v=4373203031754606031777101211 */
-.footer__block.footer__block--newsletter .self-submit-button {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}

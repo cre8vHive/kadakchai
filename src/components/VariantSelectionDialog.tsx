@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { formatMoney } from "../lib/format";
+import { formatMoney, formatVariantSizeLabel } from "../lib/format";
 import type { Product, ProductVariant } from "../types/store";
 
 type VariantSelectionDialogProps = {
@@ -75,7 +75,7 @@ export function VariantSelectionDialog({
             className="button button--lg"
             onClick={() => onConfirm(selectedVariant)}
           >
-            Add {selectedVariant.label} to Cart
+            Add {formatVariantSizeLabel(selectedVariant.label)} to Cart
           </button>
         </div>
       </section>

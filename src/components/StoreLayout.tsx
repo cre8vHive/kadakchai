@@ -3,7 +3,7 @@ import type { FormEvent } from "react";
 import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { collections, searchStore, siteSettings } from "../data/store";
 import { useCart } from "../context/useCart";
-import { formatMoney } from "../lib/format";
+import { formatMoney, formatVariantSizeLabel } from "../lib/format";
 import { QuantityControl } from "./StoreUi";
 
 function SearchIcon() {
@@ -276,34 +276,6 @@ export default function StoreLayout() {
                     ))}
                   </ul>
                 </div> */}
-
-                <div className="footer__block footer__block--newsletter">
-                  <div className="v-stack gap-6">
-                    <p className="h5">Sign-Up For Newsletter</p>
-                    <form
-                      className="footer__newsletter-form form"
-                      onSubmit={(event) => event.preventDefault()}
-                    >
-                      <div className="form-control">
-                        <input
-                          id="footer-newsletter-email"
-                          className="input is-floating"
-                          type="email"
-                          placeholder=" "
-                        />
-                        <label htmlFor="footer-newsletter-email" className="floating-label">
-                          E-mail
-                        </label>
-                        <div className="self-submit-button">
-                          <button type="submit" className="circle-chevron hover:colors">
-                            <span className="sr-only">Subscribe</span>
-                            <span className="animated-arrow" />
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
               </div>
 
               <div className="footer__aside empty:hidden">
@@ -551,7 +523,7 @@ export default function StoreLayout() {
                     <div className="cart-line__meta">
                       <div>
                         <p className="bold">{item.product.shortTitle ?? item.product.title}</p>
-                      <p className="text-subdued">{item.variant.cartLabel ?? item.variant.label}</p>
+                      <p className="text-subdued">{formatVariantSizeLabel(item.variant.cartLabel ?? item.variant.label)}</p>
                     </div>
                     <div className="cart-line__bottom">
                       <p className="bold">{formatMoney(item.variant.price)}</p>

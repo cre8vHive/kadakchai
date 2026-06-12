@@ -61,6 +61,7 @@ export type Product = {
   searchTerms: string[];
   variantOptions: ProductVariant[];
   requiresVariantSelection?: boolean;
+  isCombo?: boolean;
   reviews: ProductReview[];
 };
 

@@ -181,52 +181,7 @@ section .section .section-stack .prose .h2,
   opacity: unset;
   line-height: 20px;
 }
-.footer__block.footer__block--newsletter {
-  grid-row-end: none;
-  margin-bottom: 50px;
 
-}
-.footer__block.footer__block--newsletter p.h5 {
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: 0.0001px;
-  text-align: center;
-  font-family: Lao MN !important;
-  line-height: 34px;
-}
-.footer__block.footer__block--newsletter .form-control {
-  width: 100%;
-}
-.footer__block.footer__block--newsletter .form-control input {
-  border: none;
-  background: #fff;
-  border-radius: 6px;
-  padding: 14px 8px;
-}
-.footer__block.footer__block--newsletter .form-control label {
-  font-style: normal;
-  font-size: 14px;
-  opacity: unset;
-}
-.footer__block.footer__block--newsletter .form-control .sr-only {
-  display: contents;
-  font-family: Lao MN !important;
-}
-.footer__block.footer__block--newsletter .form-control svg {
-  display: none;
-}
-.footer__block.footer__block--newsletter .form-control button {
-  width: fit-content;
-  background: #ab8744;
-  border-radius: 3.6px;
-  color: #fff;
-  font-style: normal;
-  font-size: 14px;
-  letter-spacing: 0.9px;
-  line-height: 16.2px;
-  font-weight: 400;
-  padding: 10px 20px;
-}
 .footer__aside-bottom.copyright {
   justify-content: center;
 }
@@ -702,9 +657,6 @@ p.footer__copyright.text-sm.text-subdued {
   line-height: 34px;
   margin: 0 0 24px;
   padding: 10px 29px;
-}
-.footer__newsletter-form {
-  max-width: 100%;
 }
 .shopify-section-group-footer-group.shopify-section--rich-text .section {
   padding: 5px 38px 34px;
@@ -2279,23 +2231,7 @@ p.footer__copyright.text-sm.text-subdued a:last-of-type span {
     justify-content: unset;
     gap: 13px;
   }
-  .footer__block.footer__block--newsletter {
-    grid-row-end: unset;
-    margin-bottom: unset;
-    width: 300px;
-  }
-  .footer__block.footer__block--newsletter p.h5 {
-    font-size: 20px;
-    text-align: center;
-    line-height: 36px;
-  }
-  .footer__block.footer__block--newsletter .form-control {
-    margin: unset;
-  }
-  .footer__block.footer__block--newsletter .form-control label {
-    font-size: 18px;
-    line-height: 23px;
-  }
+
   p.footer__copyright.text-sm.text-subdued {
     margin-top: 200px;
     margin-bottom: unset;
@@ -2555,9 +2491,7 @@ p.footer__copyright.text-sm.text-subdued a:last-of-type span {
     line-height: 45px;
     padding: unset;
   }
-  .footer__block.footer__block--newsletter .v-stack {
-    gap: 16px;
-  }
+
   #social-widget-list-section {
     padding: 29px 0;
   }
@@ -3005,8 +2939,7 @@ p.footer__copyright.text-sm.text-subdued a:last-of-type span {
     font-weight: 400;
     line-height: normal;
   }
-  .footer__block-list,
-  .footer__block--newsletter .v-stack {
+  .footer__block-list {
     gap: 27px;
   }
   .footer__block.footer__block--menu ul {

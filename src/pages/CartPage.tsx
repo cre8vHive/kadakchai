@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useCart } from "../context/useCart";
-import { formatMoney } from "../lib/format";
+import { formatMoney, formatVariantSizeLabel } from "../lib/format";
 import { useDocumentTitle } from "../lib/meta";
 import { getRazorpayKeyId, openRazorpayCheckout } from "../lib/razorpay";
 import { QuantityControl } from "../components/StoreUi";
@@ -27,7 +27,7 @@ export default function CartPage() {
         items: items.map((item) => ({
           name: item.product.title,
           quantity: item.quantity,
-          variant: item.variant.cartLabel ?? item.variant.label,
+          variant: formatVariantSizeLabel(item.variant.cartLabel ?? item.variant.label),
         })),
         onDismiss: () => setIsCheckingOut(false),
         onError: (message) => {

@@ -1,7 +1,7 @@
 import logo from "../files/Vahdam_logo0ffc.jpg";
 // import storyBanner from "../files/Hibiscus&Celestail.png";
 import heroTurmeric from "../files/Hibiscus&Celestail.png";
-import heroSupplements from "../files/Kadak_chai.png";
+import heroSupplements from "../files/Kadak_chai1.png";
 import heroGreenTeas from "../files/Rose&Blue.png";
 import collectionAllBanner from "../files/All_collections.png";
 import Bestsellers from "../files/KADAK&BLUE.png";
@@ -98,7 +98,7 @@ export const products: Product[] = [
   {
     slug: "Rose Gold Tea",
     title: "Rose Gold Tea - Orthodox Long Leaf",
-    shortTitle: "Rose Gold Tea - Orthodox Long Leaf",
+    shortTitle: "Rose Gold Tea - Orthodox Long Leaf ",
     subtitle: "Premium Green Tea Blend | Floral Aroma",
     badge: "Bestseller",
     image: discoveryKit,
@@ -166,6 +166,8 @@ export const products: Product[] = [
     searchTerms: ["turmeric", "curcumin", "inflammation", "supplement", "capsule"],
     requiresVariantSelection: true,
     variantOptions: [
+      { id: "kadak-100g", label: "100 Grams", price: 50 },
+      { id: "kadak-250g", label: "250 Grams", price: 140 },
       { id: "kadak-500g", label: "500 Grams", price: 250, compareAtPrice: 1999 },
       { id: "kadak-1kg", label: "1 KG", price: 520, compareAtPrice: 3299 },
     ],
@@ -198,8 +200,10 @@ export const products: Product[] = [
     searchTerms: ["moringa", "powder", "immunity", "superfood"],
     requiresVariantSelection: true,
     variantOptions: [
+      { id: "superdust-100g", label: "100 Grams", price: 50 },
+      { id: "superdust-250g", label: "250 Grams", price: 140 },
       { id: "superdust-500g", label: "500 Grams", price: 250 },
-     // { id: "superdust-1kg", label: "1 KG", price: 520 },
+      { id: "superdust-1kg", label: "1 KG", price: 520 },
     ],
     reviews: [
       { author: "Vidhi", rating: 5, body: "Blends well and fits right into a clean morning routine." },

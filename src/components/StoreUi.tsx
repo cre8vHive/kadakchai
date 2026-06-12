@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/useCart";
-import { buildDiscountLabel, formatMoney } from "../lib/format";
+import { buildDiscountLabel, formatMoney, formatVariantSizeLabel } from "../lib/format";
 import type { Collection, Product, SiteLink } from "../types/store";
 import { VariantSelectionDialog } from "./VariantSelectionDialog";
-import  { useState } from "react";
+import { useState } from "react";
 type BreadcrumbsProps = {
   links: SiteLink[];
 };
@@ -91,6 +91,11 @@ export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
   const primaryVariant = product.variantOptions[0];
   const discountLabel = buildDiscountLabel(product.price, product.compareAtPrice);
+  const isComboProduct = product.isCombo === true || product.badge?.toLowerCase().includes("combo");
+  const weightLabel =
+    !isComboProduct && primaryVariant
+      ? formatVariantSizeLabel(primaryVariant.cartLabel ?? primaryVariant.label)
+      : "";
   const [isVariantDialogOpen, setIsVariantDialogOpen] = useState(false);
   const [selectedVariantId, setSelectedVariantId] = useState(primaryVariant?.id ?? "");
   const requiresSelection = Boolean(product.requiresVariantSelection && product.variantOptions.length > 1);
@@ -115,14 +120,16 @@ export function ProductCard({ product }: ProductCardProps) {
         </h2>
         <p className="text-subdued">{product.subtitle ?? product.description[0]}</p>
 
-        <div className="div">
-          <div className={product.compareAtPrice ? "text-on-sale" : "text-subdued"}>
-            <span className="money">{formatMoney(product.price)}</span>
+        <div className="product-card__pricing">
+          {weightLabel ? <p className="product-card__weight text-subdued">{weightLabel}</p> : null}
+
+          <div className={primaryVariant?.compareAtPrice ? "text-on-sale" : "text-subdued"}>
+            <span className="money">{formatMoney(primaryVariant?.price ?? product.price)}</span>
           </div>
 
-          {product.compareAtPrice ? (
+          {primaryVariant?.compareAtPrice ? (
             <div className="text-subdued line-through">
-              <span className="money">{formatMoney(product.compareAtPrice)}</span>
+              <span className="money">{formatMoney(primaryVariant.compareAtPrice)}</span>
             </div>
           ) : null}
 
@@ -161,6 +168,20 @@ export function ProductCard({ product }: ProductCardProps) {
         }}
       />
     </>
+  );
+}
+
+type ProductGalleryProps = {
+  product: Product;
+};
+
+export function ProductGallery({ product }: ProductGalleryProps) {
+  return (
+    <div className="product-gallery">
+      <div className="product-gallery__main rounded-sm shadow">
+        <img src={product.image} alt={product.title} />
+      </div>
+    </div>
   );
 }
 

@@ -98,7 +98,14 @@ export function ProductCard({ product }: ProductCardProps) {
       : "";
   const [isVariantDialogOpen, setIsVariantDialogOpen] = useState(false);
   const [selectedVariantId, setSelectedVariantId] = useState(primaryVariant?.id ?? "");
+  const [isExpanded, setIsExpanded] = useState(false);
   const requiresSelection = Boolean(product.requiresVariantSelection && product.variantOptions.length > 1);
+  const isExpandableProduct =
+    product.slug === "Kadak Chai" || product.slug === "Superr Dust" || product.slug === "Blue Pea" || product.slug === "Hibiscus";
+  const isSuperrDust = product.slug === "Superr Dust";
+  const isBluePea = product.slug === "Blue Pea";
+  const isHibiscus = product.slug === "Hibiscus";
+  const learnMoreId = `${product.slug.replace(/\s+/g, "-").toLowerCase()}-learn-more`;
 
   return (
     <>
@@ -119,6 +126,95 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.shortTitle ?? product.title}
         </h2>
         <p className="text-subdued">{product.subtitle ?? product.description[0]}</p>
+
+        {isExpandableProduct ? (
+          <>
+            <button
+              type="button"
+              className="button button--outline product-card__learn-more"
+              aria-expanded={isExpanded}
+              aria-controls={learnMoreId}
+              onClick={() => setIsExpanded((current) => !current)}
+            >
+              {isExpanded ? "Show Less" : "Learn More"}
+            </button>
+
+            <div
+              id={learnMoreId}
+              className={`product-card__learn-more-content ${isExpanded ? "is-open" : ""}`}
+              aria-hidden={!isExpanded}
+            >
+              <p>
+                {isHibiscus
+                  ? "A refreshing blend of carefully selected green tea leaves crafted to support a balanced lifestyle. Light, smooth, and naturally invigorating."
+                  : isBluePea
+                  ? "Made from carefully sourced Butterfly Pea flowers, this caffeine-free herbal infusion offers a naturally vibrant blue color and a soothing wellness experience."
+                  : isSuperrDust
+                  ? "Specially crafted for tea lovers who prefer a stronger and quicker brew. Our Superr Dust Tea delivers exceptional color, bold flavor, and a refreshing experience in every cup."
+                  : "Experience the authentic strength of traditional Indian tea with our signature Kadak Chai. Crafted using carefully selected premium CTC tea leaves, this blend delivers a bold aroma, rich color, and full-bodied flavor that tea lovers crave."}
+              </p>
+
+              <div className="product-card__learn-more-section">
+                <p className="bold">Features</p>
+                <ul className="product-card__learn-more-list">
+                  {isHibiscus ? (
+                    <>
+                      <li>Rich in antioxidants</li>
+                      <li>Light and refreshing taste</li>
+                      <li>Supports daily wellness routines</li>
+                      <li>Premium whole leaf quality</li>
+                      <li>Naturally low in calories</li>
+                    </>
+                  ) : isBluePea ? (
+                    <>
+                      <li>100% Natural Butterfly Pea Flowers</li>
+                      <li>Caffeine-free herbal infusion</li>
+                      <li>Rich in natural antioxidants</li>
+                      <li>Color-changing tea when lemon is added</li>
+                      <li>Suitable for wellness-focused lifestyles</li>
+                    </>
+                  ) : isSuperrDust ? (
+                    <>
+                      <li>Fine dust tea blend</li>
+                      <li>Quick brewing formula</li>
+                      <li>Strong aroma and taste</li>
+                      <li>Excellent color extraction</li>
+                      <li>Suitable for homes, offices, and cafes</li>
+                    </>
+                  ) : (
+                    <>
+                      <li>Strong and refreshing taste</li>
+                      <li>Premium quality CTC tea leaves</li>
+                      <li>Rich aroma and deep liquor</li>
+                      <li>Perfect for milk tea preparations</li>
+                      <li>Ideal for everyday consumption</li>
+                    </>
+                  )}
+                </ul>
+
+                <p className="bold">Available Sizes</p>
+                <ul className="product-card__learn-more-list">
+                  {isHibiscus ? (
+                    <>
+                      <li>50g</li>
+                    </>
+                  ) : isBluePea ? (
+                    <>
+                      <li>50g</li>
+                    </>
+                  ) : (
+                    <>
+                      <li>100g</li>
+                      <li>250g</li>
+                      <li>500g</li>
+                      <li>1KG</li>
+                    </>
+                  )}
+                </ul>
+              </div>
+            </div>
+          </>
+        ) : null}
 
         <div className="product-card__pricing">
           {weightLabel ? <p className="product-card__weight text-subdued">{weightLabel}</p> : null}

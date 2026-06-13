@@ -281,7 +281,7 @@ export default function StoreLayout() {
               <div className="footer__aside empty:hidden">
                 <div className="footer__aside-bottom copyright">
                   <p className="footer__copyright text-sm text-subdued">
-                    <Link to="/pages/terms-conditions">Terms & Conditions</Link>
+                    <Link to="/terms-and-conditions">Terms & Conditions</Link>
                   </p>
                   <p className="footer-custom-p">{siteSettings.footerDisclaimer}</p>
                 </div>

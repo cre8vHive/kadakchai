@@ -8,12 +8,12 @@ export default function TermsPage() {
   useEffect(() => {
     const description =
       "Read the Terms and Conditions governing the use of Mahalakshmi Tea Powders website and services.";
-    let meta = document.querySelector('meta[name="description"]');
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
 
     if (meta) {
       meta.setAttribute("content", description);
     } else {
-      meta = document.createElement("meta");
+      meta = document.createElement("meta") as HTMLMetaElement;
       meta.name = "description";
       meta.content = description;
       document.head.appendChild(meta);

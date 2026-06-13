@@ -6,6 +6,7 @@ import ContentPage from "./pages/ContentPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import SearchPage from "./pages/SearchPage";
+import TermsPage from "./pages/TermsPage";
 
 export default function App() {
   return (
@@ -14,6 +15,8 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="/collections" element={<Navigate to="/collections/all" replace />} />
         <Route path="/collections/:slug" element={<CollectionPage />} />
+        <Route path="/terms-and-conditions" element={<TermsPage />} />
+        <Route path="/pages/terms-conditions" element={<Navigate to="/terms-and-conditions" replace />} />
         <Route path="/pages/:slug" element={<ContentPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/cart" element={<CartPage />} />

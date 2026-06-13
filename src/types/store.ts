@@ -77,7 +77,10 @@ export type ContentPage = {
   eyebrow?: string;
   heroImage?: string;
   intro: string;
+  lastUpdated?: string;
+  metaDescription?: string;
   body: string[];
+  bodyHtml?: string;
   cta?: {
     label: string;
     to: string;

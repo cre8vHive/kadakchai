@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Breadcrumbs } from "../components/StoreUi";
 import { findPage } from "../data/store";
@@ -8,6 +10,23 @@ export default function ContentPage() {
   const { slug = "" } = useParams();
   const page = findPage(slug);
   useDocumentTitle(page?.title ?? "Page Not Found");
+
+  useEffect(() => {
+    if (!page?.metaDescription) {
+      return;
+    }
+
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+
+    if (meta) {
+      meta.setAttribute("content", page.metaDescription);
+    } else {
+      meta = document.createElement("meta") as HTMLMetaElement;
+      meta.name = "description";
+      meta.content = page.metaDescription;
+      document.head.appendChild(meta);
+    }
+  }, [page?.metaDescription]);
 
   if (!page) {
     return <NotFoundPage />;
@@ -36,12 +55,37 @@ export default function ContentPage() {
           <div className="prose">
             {page.eyebrow ? <p className="subheading">{page.eyebrow}</p> : null}
             <h1 className="h1">{page.title}</h1>
+            {page.lastUpdated ? (
+              <p className="text-sm text-subdued">{page.lastUpdated}</p>
+            ) : null}
             <p>{page.intro}</p>
           </div>
 
-          {page.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+          {page.bodyHtml ? (
+            <div className="prose" dangerouslySetInnerHTML={{ __html: page.bodyHtml }} />
+          ) : (
+            page.body.map((paragraph, index) => (
+              <Fragment key={`paragraph-${index}`}>
+                <p>{paragraph}</p>
+                {page.slug === "our-story" && index === 1 ? (
+                  <section className="story-retail-section">
+                    <h2 className="section-heading">Available Across Leading Retail Stores</h2>
+                    <p>
+                      You can find Mahalakshmi Tea Powders at trusted retail partners including:
+                    </p>
+                    <ul>
+                      <li>Rathnadeep</li>
+                      <li>Q-Mart</li>
+                      <li>Selected supermarkets and retail outlets across Telangana and Andhra Pradesh</li>
+                    </ul>
+                    <p className="story-retail-note">
+                      Every pack is created with care, ensuring that the authentic taste of premium tea reaches your home.
+                    </p>
+                  </section>
+                ) : null}
+              </Fragment>
+            ))
+          )}
 
           {page.cta ? (
             <div>

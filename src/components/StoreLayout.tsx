@@ -319,7 +319,14 @@ export default function StoreLayout() {
                 Crafted with passion for authentic flavors, wellness, and premium tea experiences. Bringing tradition and quality together in every blend.
               </p>
               <p className="footer-brand-credit__studio">
-                © Designed & Developed by <span className="footer-brand-credit__studio-highlight">Crev8 Studio</span>
+                © Designed & Developed by <a
+                  className="footer-brand-credit__studio-highlight"
+                  href="https://www.instagram.com/cre8vstudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Crev8 Studio
+                </a>
               </p>
             </div>
           </div>
@@ -349,7 +356,6 @@ export default function StoreLayout() {
             ))}
 
             <Link to="/search">Search</Link>
-            <Link to="/account/login">Account</Link>
           </nav>
         </aside>
       </div>

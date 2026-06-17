@@ -105,11 +105,13 @@ export function ProductCard({ product }: ProductCardProps) {
     product.slug === "Superr Dust" ||
     product.slug === "Blue Pea" ||
     product.slug === "Hibiscus" ||
-    product.slug === "Rose Gold Tea";
+    product.slug === "Rose Gold Tea" ||
+    product.slug === "Celestail";
   const isSuperrDust = product.slug === "Superr Dust";
   const isBluePea = product.slug === "Blue Pea";
   const isHibiscus = product.slug === "Hibiscus";
   const isRoseGold = product.slug === "Rose Gold Tea";
+  const isChamomile = product.slug === "Celestail";
   const learnMoreId = `${product.slug.replace(/\s+/g, "-").toLowerCase()}-learn-more`;
 
   return (
@@ -150,7 +152,9 @@ export function ProductCard({ product }: ProductCardProps) {
               aria-hidden={!isExpanded}
             >
               <p>
-                {isRoseGold
+                {isChamomile
+                  ? "Experience pure calm in every cup with our Chamomile Herbal Infusion. Crafted from carefully selected chamomile blossoms, this soothing caffeine-free blend is designed to help you unwind, relax, and restore balance. Delicate floral notes combine with a naturally smooth and comforting taste, making it the perfect companion for peaceful mornings, mindful afternoons, and restful evenings."
+                  : isRoseGold
                   ? "Indulge in the delicate charm of premium orthodox long leaf tea infused with the enchanting aroma of roses. Carefully handcrafted for tea lovers and connoisseurs, this elegant blend combines rich tea notes with graceful floral undertones, creating a smooth and refreshing cup that soothes the senses."
                   : isHibiscus
                   ? "A refreshing blend of carefully selected green tea leaves crafted to support a balanced lifestyle. Light, smooth, and naturally invigorating."
@@ -164,7 +168,15 @@ export function ProductCard({ product }: ProductCardProps) {
               <div className="product-card__learn-more-section">
                 <p className="bold">Why You&apos;ll Love It</p>
                 <ul className="product-card__learn-more-list">
-                  {isRoseGold ? (
+                  {isChamomile ? (
+                    <>
+                      <li>Made with carefully selected chamomile flowers</li>
+                      <li>Naturally calming and caffeine-free</li>
+                      <li>Light floral aroma with a smooth, soothing finish</li>
+                      <li>Ideal for relaxation, stress relief, and bedtime rituals</li>
+                      <li>Enjoy hot or iced for a refreshing herbal experience</li>
+                    </>
+                  ) : isRoseGold ? (
                     <>
                       <li>Premium orthodox long leaf tea</li>
                       <li>Natural rose-infused aroma</li>
@@ -209,7 +221,11 @@ export function ProductCard({ product }: ProductCardProps) {
 
                 <p className="bold">Available Sizes</p>
                 <ul className="product-card__learn-more-list">
-                  {isRoseGold ? (
+                  {isChamomile ? (
+                    <>
+                      <li>50g</li>
+                    </>
+                  ) : isRoseGold ? (
                     <>
                       <li>50g</li>
                     </>
@@ -231,7 +247,12 @@ export function ProductCard({ product }: ProductCardProps) {
                   )}
                 </ul>
 
-                {isRoseGold ? (
+                {isChamomile ? (
+                  <>
+                    <p className="text-strong">Sip. Relax. Restore.</p>
+                    <p className="text-subdued">Let every cup bring a moment of serenity to your day with the gentle aroma and comforting taste of our rich Chamomile Herbal Infusion.</p>
+                  </>
+                ) : isRoseGold ? (
                   <p className="text-strong">Sip Elegance. Embrace Serenity.</p>
                 ) : null}
               </div>

@@ -5,9 +5,9 @@ import heroSupplements from "../files/Kadak_chai1.png";
 import heroGreenTeas from "../files/Rose&Blue.png";
 import collectionAllBanner from "../files/All_collections.png";
 import Bestsellers from "../files/KADAK&BLUE.png";
-import oprah from "../files/Mano.png";
-import ellen from "../files/Ellenc2a3.png";
-import mariah from "../files/Mariah_Careyc2a3.png";
+import oprah from "../files/Manohar.png";
+import ellen from "../files/Anikitha Kapoor.png";
+import mariah from "../files/Arjun reddy.png";
 import discoveryKit from "../files/Rose gold.png";
 import turmericCapsules from "../files/Kadak Chai 1.png";
 import moringaPowder from "../files/Super dust 2.png";
@@ -97,49 +97,39 @@ export const homeSlides: HeroSlide[] = [
 export const products: Product[] = [
   {
     slug: "Rose Gold Tea",
-    title: "Rose Gold Tea - Orthodox Long Leaf",
-    shortTitle: "Rose Gold Tea - Orthodox Long Leaf ",
-    subtitle: "Premium Green Tea Blend | Floral Aroma",
+    title: "Rose Gold Tea – Orthodox Long Leaf",
+    shortTitle: "Rose Gold Tea – Orthodox Long Leaf",
+    subtitle: "Elegant rose-infused orthodox long leaf tea",
     badge: "Bestseller",
     image: discoveryKit,
     dimensions: { width: 400, height: 500 },
     price: 399,
-    rating: 4.69,
-    reviewCount: 26,
+    rating: 4.9,
+    reviewCount: 98,
     description: [
-      "A calming trio of Green Teas with Ashwagandha in Moringa Tulsi, Chamomile Mint, and Honey Lemon.",
-      "Crafted for stress-free weight management, they help keep cravings - especially during the 4 PM slump - in check while supporting balance and calm.",
-      "Moringa Tulsi supports immunity, Chamomile Mint helps you relax, and Honey Lemon keeps you refreshed and rejuvenated with every sip.",
+      "A luxurious blend where elegance meets refreshment.",
+      "Crafted from premium orthodox long leaf tea and infused with delicate rose notes.",
+      "This exquisite blend offers a smooth floral taste and a soothing tea experience in every sip.",
     ],
     benefits: [
-      "Stress-free daily green tea ritual",
-      "Supports calm, balance, and light refreshment",
-      "Great starter format for gifting or sampling",
+      "Premium orthodox long leaf tea",
+      "Natural rose-infused aroma",
+      "Smooth floral finish",
+      "Handcrafted luxury blend",
+      "Ideal for mornings, afternoon breaks, and evening relaxation",
     ],
-    ingredients: [
-      "Ashwagandha",
-      "Moringa Tulsi Green Tea",
-      "Chamomile Mint Green Tea",
-      "Honey Lemon Green Tea",
-    ],
-    heroNote: "UI-only purchase flow for now. You can wire the backend APIs later without replacing the page structure.",
-    collectionSlugs: ["best-sellers", "green-teas", "all"],
-    searchTerms: ["starter kit", "green tea", "gift", "sampler", "ashwagandha"],
+    ingredients: ["Orthodox Long Leaf Tea", "Rose Petal Essence"],
+    collectionSlugs: ["green-teas", "all"],
+    searchTerms: ["rose gold", "orthodox tea", "rose tea", "floral tea", "premium tea"],
     variantOptions: [
-      {
-        id: "wsk-pack-3",
-        label: "Pack of 3",
-        cartLabel: "50 Grams",
-        price: 399,
-        compareAtPrice: 1239,
-      },
+      { id: "rose-gold-50g", label: "50 Grams", cartLabel: "50 Grams", price: 399 },
     ],
     reviews: [
-      { author: "Neha Joshi", rating: 5, title: "Pretty good", body: "Noticed gradual improvement over time. (9-welln)" },
-      { author: "Karan Shah", rating: 4, body: "Light, refreshing and easy to drink. (10-welln)" },
-      { author: "Vikas Bansal", rating: 5, title: "Pretty good", body: "Good quality but takes time to show effects. (3-welln)" },
-      { author: "Karan Desai", rating: 5, title: "Pretty good", body: "Really enjoyed the flavour and felt a positive difference. (12-welln)" },
-      { author: "Isha Jain", rating: 4, title: "Worth trying", body: "Really enjoyed the flavour and felt a positive difference. (5-welln)" },
+      { author: "Neha Joshi", rating: 5, title: "Elegant and refined", body: "The rose aroma is delicate and beautifully balanced with the tea leaves." },
+      { author: "Karan Shah", rating: 5, body: "Smooth, floral, and wonderfully premium." },
+      { author: "Vikas Bansal", rating: 5, title: "Beautiful cup", body: "A lovely evening tea with a soft bouquet of rose." },
+      { author: "Karan Desai", rating: 5, title: "Impressively smooth", body: "A luxurious sip with graceful rose notes." },
+      { author: "Isha Jain", rating: 5, title: "Highly recommend", body: "Perfect for a calming afternoon break." },
     ],
   },
   {
@@ -592,12 +582,12 @@ export const celebrityTestimonials: CelebrityTestimonial[] = [
   {
     image: ellen,
     quote: "The Kadak Chai instantly reminded me of the strong homemade tea I grew up with. Rich aroma, bold taste, and consistently satisfying every single day.",
-    author: "Priya Sharma",
+    author: "Ankitha Kapoor",
   },
   {
     image: mariah,
     quote: "I gifted Mahalakshmi Tea products to my family and everyone loved them. Premium packaging, authentic flavor, and exceptional quality make it stand out.",
-    author: "Arjun Reddy",
+    author: "Ravi Muvvala",
   },
 ];
 

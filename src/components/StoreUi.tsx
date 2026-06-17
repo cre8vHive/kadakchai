@@ -101,10 +101,15 @@ export function ProductCard({ product }: ProductCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const requiresSelection = Boolean(product.requiresVariantSelection && product.variantOptions.length > 1);
   const isExpandableProduct =
-    product.slug === "Kadak Chai" || product.slug === "Superr Dust" || product.slug === "Blue Pea" || product.slug === "Hibiscus";
+    product.slug === "Kadak Chai" ||
+    product.slug === "Superr Dust" ||
+    product.slug === "Blue Pea" ||
+    product.slug === "Hibiscus" ||
+    product.slug === "Rose Gold Tea";
   const isSuperrDust = product.slug === "Superr Dust";
   const isBluePea = product.slug === "Blue Pea";
   const isHibiscus = product.slug === "Hibiscus";
+  const isRoseGold = product.slug === "Rose Gold Tea";
   const learnMoreId = `${product.slug.replace(/\s+/g, "-").toLowerCase()}-learn-more`;
 
   return (
@@ -145,7 +150,9 @@ export function ProductCard({ product }: ProductCardProps) {
               aria-hidden={!isExpanded}
             >
               <p>
-                {isHibiscus
+                {isRoseGold
+                  ? "Indulge in the delicate charm of premium orthodox long leaf tea infused with the enchanting aroma of roses. Carefully handcrafted for tea lovers and connoisseurs, this elegant blend combines rich tea notes with graceful floral undertones, creating a smooth and refreshing cup that soothes the senses."
+                  : isHibiscus
                   ? "A refreshing blend of carefully selected green tea leaves crafted to support a balanced lifestyle. Light, smooth, and naturally invigorating."
                   : isBluePea
                   ? "Made from carefully sourced Butterfly Pea flowers, this caffeine-free herbal infusion offers a naturally vibrant blue color and a soothing wellness experience."
@@ -155,9 +162,17 @@ export function ProductCard({ product }: ProductCardProps) {
               </p>
 
               <div className="product-card__learn-more-section">
-                <p className="bold">Features</p>
+                <p className="bold">Why You&apos;ll Love It</p>
                 <ul className="product-card__learn-more-list">
-                  {isHibiscus ? (
+                  {isRoseGold ? (
+                    <>
+                      <li>Premium orthodox long leaf tea</li>
+                      <li>Natural rose-infused aroma</li>
+                      <li>Smooth floral finish</li>
+                      <li>Handcrafted luxury blend</li>
+                      <li>Ideal for mornings, afternoon breaks, and evening relaxation</li>
+                    </>
+                  ) : isHibiscus ? (
                     <>
                       <li>Rich in antioxidants</li>
                       <li>Light and refreshing taste</li>
@@ -194,7 +209,11 @@ export function ProductCard({ product }: ProductCardProps) {
 
                 <p className="bold">Available Sizes</p>
                 <ul className="product-card__learn-more-list">
-                  {isHibiscus ? (
+                  {isRoseGold ? (
+                    <>
+                      <li>50g</li>
+                    </>
+                  ) : isHibiscus ? (
                     <>
                       <li>50g</li>
                     </>
@@ -211,6 +230,10 @@ export function ProductCard({ product }: ProductCardProps) {
                     </>
                   )}
                 </ul>
+
+                {isRoseGold ? (
+                  <p className="text-strong">Sip Elegance. Embrace Serenity.</p>
+                ) : null}
               </div>
             </div>
           </>

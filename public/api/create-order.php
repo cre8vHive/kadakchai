@@ -32,7 +32,8 @@ $url = "https://api.razorpay.com/v1/orders";
 $data = [
     "amount" => $amountInPaise,
     "currency" => "INR",
-    "receipt" => "rcpt_" . uniqid()
+    "receipt" => "rcpt_" . uniqid(),
+    "notes" => isset($input['notes']) ? $input['notes'] : new stdClass()
 ];
 
 $ch = curl_init($url);

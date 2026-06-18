@@ -16,7 +16,13 @@ export default function CartPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
+  const [addressLine1, setAddressLine1] = useState("");
+  const [addressLine2, setAddressLine2] = useState("");
+  const [city, setCity] = useState("");
+  const [stateStr, setStateStr] = useState("");
+  const [pincode, setPincode] = useState("");
+
+  const [completedOrderId, setCompletedOrderId] = useState("");
 
   const hasRazorpayKey = Boolean(getRazorpayKeyId());
 
@@ -28,8 +34,10 @@ export default function CartPage() {
     setPaymentId("");
     setIsCheckingOut(true);
 
-    if (!name || !email || !phone || !address) {
-      setCheckoutError("Please fill out all delivery details.");
+    const fullAddress = `${addressLine1}, ${addressLine2 ? addressLine2 + ', ' : ''}${city}, ${stateStr} - ${pincode}`;
+
+    if (!name || !email || !phone || !addressLine1 || !city || !stateStr || !pincode) {
+      setCheckoutError("Please fill out all required delivery details.");
       setIsCheckingOut(false);
       return;
     }
@@ -39,7 +47,14 @@ export default function CartPage() {
       const response = await fetch("/api/create-order.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: subtotal }),
+        body: JSON.stringify({ 
+          amount: subtotal,
+          notes: {
+            delivery_address: fullAddress.slice(0, 255),
+            customer_name: name.slice(0, 255),
+            phone: phone.slice(0, 255)
+          }
+        }),
       });
 
       const data = await response.json();
@@ -60,7 +75,7 @@ export default function CartPage() {
         })),
         orderId: data.id,
         prefill: { name, email, contact: phone },
-        deliveryAddress: address,
+        deliveryAddress: fullAddress,
         onDismiss: () => setIsCheckingOut(false),
         onError: (message) => {
           setCheckoutError(message);
@@ -68,6 +83,7 @@ export default function CartPage() {
         },
         onSuccess: (razorpayPaymentId) => {
           setPaymentId(razorpayPaymentId);
+          setCompletedOrderId(data.id);
           setIsCheckingOut(false);
           clearCart();
         },
@@ -76,6 +92,24 @@ export default function CartPage() {
       setCheckoutError(error instanceof Error ? error.message : "Payment could not be started.");
       setIsCheckingOut(false);
     }
+  }
+
+  if (completedOrderId) {
+    return (
+      <div className="page-section">
+        <div className="empty-state-card" style={{ maxWidth: "600px", margin: "0 auto", padding: "48px 24px", border: "1px solid #e5e7eb", borderRadius: "8px", textAlign: "center" }}>
+          <div style={{ fontSize: "48px", marginBottom: "16px" }}>🎉</div>
+          <h1 className="h2" style={{ marginBottom: "16px" }}>Payment Successful!</h1>
+          <p className="muted-copy" style={{ marginBottom: "8px" }}>Thank you for your order.</p>
+          <p className="muted-copy" style={{ marginBottom: "24px" }}>
+            Your Order ID is: <strong style={{ color: "#000" }}>{completedOrderId}</strong>
+          </p>
+          <Link to="/" className="button button--xl">
+            Continue Shopping
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -131,20 +165,42 @@ export default function CartPage() {
               <h2 className="h4" style={{ marginBottom: "16px" }}>Delivery Details</h2>
               <div style={{ display: "grid", gap: "16px" }}>
                 <div>
-                  <label htmlFor="name" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Full Name</label>
+                  <label htmlFor="name" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Full Name*</label>
                   <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} placeholder="John Doe" required />
                 </div>
                 <div>
-                  <label htmlFor="email" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Email Address</label>
+                  <label htmlFor="email" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Email Address*</label>
                   <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} placeholder="john@example.com" required />
                 </div>
                 <div>
-                  <label htmlFor="phone" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Phone Number</label>
+                  <label htmlFor="phone" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Phone Number*</label>
                   <input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} placeholder="+91 9876543210" required />
                 </div>
-                <div>
-                  <label htmlFor="address" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Full Delivery Address</label>
-                  <textarea id="address" value={address} onChange={(e) => setAddress(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc", minHeight: "80px" }} placeholder="123 Street Name, City, State, ZIP" required />
+                
+                <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px", marginTop: "8px" }}>
+                  <div>
+                    <label htmlFor="addressLine1" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Address Line 1*</label>
+                    <input id="addressLine1" type="text" value={addressLine1} onChange={(e) => setAddressLine1(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} placeholder="Flat / House No. / Building" required />
+                  </div>
+                  <div>
+                    <label htmlFor="addressLine2" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Address Line 2 (Optional)</label>
+                    <input id="addressLine2" type="text" value={addressLine2} onChange={(e) => setAddressLine2(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} placeholder="Street / Area / Landmark" />
+                  </div>
+                </div>
+                
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "16px" }}>
+                  <div>
+                    <label htmlFor="city" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>City*</label>
+                    <input id="city" type="text" value={city} onChange={(e) => setCity(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} required />
+                  </div>
+                  <div>
+                    <label htmlFor="state" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>State*</label>
+                    <input id="state" type="text" value={stateStr} onChange={(e) => setStateStr(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} required />
+                  </div>
+                  <div>
+                    <label htmlFor="pincode" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Pincode*</label>
+                    <input id="pincode" type="text" value={pincode} onChange={(e) => setPincode(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} required />
+                  </div>
                 </div>
               </div>
             </div>

@@ -9,7 +9,7 @@ import {
 } from "../data/store";
 import { useDocumentTitle } from "../lib/meta";
 import { CollectionCard, ProductCard } from "../components/StoreUi";
-import allCollections from "../files/All_collections.png";
+import allCollections from "../files/All_collections.webp";
 
 export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);

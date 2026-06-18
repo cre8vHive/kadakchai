@@ -45,7 +45,8 @@ export default function CartPage() {
       const data = await response.json();
 
       if (!response.ok || !data.id) {
-        throw new Error(data.error || "Failed to create order from server.");
+        const errorMessage = data.error?.description || data.error?.message || (typeof data.error === 'string' ? data.error : "Failed to create order from server.");
+        throw new Error(errorMessage);
       }
 
       // 2. Open Razorpay Checkout Modal

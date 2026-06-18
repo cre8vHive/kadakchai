@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // ⚠️ REPLACE THESE WITH YOUR ACTUAL KEYS FROM RAZORPAY DASHBOARD ⚠️
-$keyId = "rzp_test_Srf6wbDOo54wdu";
-$keySecret = "pLah1yKHWwZAGJWDwzTbOuzh";
+$keyId = "rzp_live_T32ATrXQ3S79RF";
+$keySecret = "Lf7rp6PqOU4wTZt4POtngKKu";
 
 // Read the incoming JSON data
 $inputJSON = file_get_contents('php://input');

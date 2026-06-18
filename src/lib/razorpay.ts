@@ -12,6 +12,13 @@ export type RazorpayCheckoutInput = {
   amount: number;
   description: string;
   items: RazorpayCheckoutLine[];
+  orderId: string;
+  prefill: {
+    name: string;
+    email: string;
+    contact: string;
+  };
+  deliveryAddress: string;
   onDismiss?: () => void;
   onError: (message: string) => void;
   onSuccess: (paymentId: string) => void;
@@ -19,6 +26,8 @@ export type RazorpayCheckoutInput = {
 
 type RazorpayResponse = {
   razorpay_payment_id: string;
+  razorpay_order_id: string;
+  razorpay_signature: string;
 };
 
 type RazorpayFailureResponse = {
@@ -34,6 +43,12 @@ type RazorpayOptions = {
   handler: (response: RazorpayResponse) => void;
   image?: string;
   key: string;
+  order_id: string;
+  prefill: {
+    name: string;
+    email: string;
+    contact: string;
+  };
   modal: {
     ondismiss?: () => void;
   };
@@ -96,6 +111,9 @@ export async function openRazorpayCheckout({
   amount,
   description,
   items,
+  orderId,
+  prefill,
+  deliveryAddress,
   onDismiss,
   onError,
   onSuccess,
@@ -119,6 +137,8 @@ export async function openRazorpayCheckout({
     handler: (response) => onSuccess(response.razorpay_payment_id),
     image: siteSettings.logo,
     key,
+    order_id: orderId,
+    prefill,
     modal: {
       ondismiss: onDismiss,
     },
@@ -128,7 +148,8 @@ export async function openRazorpayCheckout({
         .map((item) => `${item.name} (${item.variant}) x ${item.quantity}`)
         .join("; ")
         .slice(0, 256),
-      source: "kadakchai-client-only-checkout",
+      source: "kadakchai-checkout",
+      delivery_address: deliveryAddress.slice(0, 256),
     },
     theme: {
       color: "#004a2b",

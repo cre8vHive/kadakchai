@@ -11,16 +11,44 @@ export default function CartPage() {
   const [checkoutError, setCheckoutError] = useState("");
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [paymentId, setPaymentId] = useState("");
+  
+  // Delivery Form State
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+
   const hasRazorpayKey = Boolean(getRazorpayKeyId());
 
   useDocumentTitle("Cart");
 
-  async function handleCheckout() {
+  async function handleCheckout(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
     setCheckoutError("");
     setPaymentId("");
     setIsCheckingOut(true);
 
+    if (!name || !email || !phone || !address) {
+      setCheckoutError("Please fill out all delivery details.");
+      setIsCheckingOut(false);
+      return;
+    }
+
     try {
+      // 1. Create Order via PHP Backend
+      const response = await fetch("/api/create-order.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: subtotal }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.id) {
+        throw new Error(data.error || "Failed to create order from server.");
+      }
+
+      // 2. Open Razorpay Checkout Modal
       await openRazorpayCheckout({
         amount: subtotal,
         description: `${items.length} item${items.length === 1 ? "" : "s"} from your cart`,
@@ -29,6 +57,9 @@ export default function CartPage() {
           quantity: item.quantity,
           variant: formatVariantSizeLabel(item.variant.cartLabel ?? item.variant.label),
         })),
+        orderId: data.id,
+        prefill: { name, email, contact: phone },
+        deliveryAddress: address,
         onDismiss: () => setIsCheckingOut(false),
         onError: (message) => {
           setCheckoutError(message);
@@ -93,6 +124,30 @@ export default function CartPage() {
               ))}
             </div>
           )}
+
+          {items.length > 0 && (
+            <div className="delivery-form" style={{ marginTop: "32px", padding: "24px", border: "1px solid #e5e7eb", borderRadius: "8px" }}>
+              <h2 className="h4" style={{ marginBottom: "16px" }}>Delivery Details</h2>
+              <div style={{ display: "grid", gap: "16px" }}>
+                <div>
+                  <label htmlFor="name" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Full Name</label>
+                  <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} placeholder="John Doe" required />
+                </div>
+                <div>
+                  <label htmlFor="email" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Email Address</label>
+                  <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} placeholder="john@example.com" required />
+                </div>
+                <div>
+                  <label htmlFor="phone" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Phone Number</label>
+                  <input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc" }} placeholder="+91 9876543210" required />
+                </div>
+                <div>
+                  <label htmlFor="address" style={{ display: "block", marginBottom: "8px", fontWeight: 500 }}>Full Delivery Address</label>
+                  <textarea id="address" value={address} onChange={(e) => setAddress(e.target.value)} style={{ width: "100%", padding: "10px", borderRadius: "4px", border: "1px solid #ccc", minHeight: "80px" }} placeholder="123 Street Name, City, State, ZIP" required />
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         <aside className="cart-summary">
@@ -121,7 +176,7 @@ export default function CartPage() {
             disabled={items.length === 0 || isCheckingOut || !hasRazorpayKey}
             onClick={handleCheckout}
           >
-            {isCheckingOut ? "Opening Razorpay..." : "Pay"}
+            {isCheckingOut ? "Processing..." : "Pay Securely"}
           </button>
         </aside>
       </div>
